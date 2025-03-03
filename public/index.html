@@ -52,11 +52,11 @@
 
             <div class="relative">
                 <!--Header-->
-                <header class="flex justify-between items-center px-6 py-4 border-orange-100 border-b">
+                <header class="flex justify-between items-center px-6 pt-4">
                     <div class="flex items-center">
-                        <Link href="/" class="font-medium text-2xl">
-                        ~
-                        </Link>
+                        <a href="/" class="w-[12rem]">
+                            <img src="../src/assets/images/logo.png" alt="logo" class="w-full h-full">
+                        </a>
                     </div>
 
                     <nav class="hidden md:flex items-center space-x-8">
@@ -76,9 +76,18 @@
                     </nav>
 
                     <div>
-                        <a href="/signup"
-                            class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 font-bold text-white text-sm">
+                        <!-- <a href="/signup"
+                            class="hover:bg-purple-700 bg-gradient-to-t from-[#36cbd7] to-[#396fe3] px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 font-bold text-white text-sm">
                             Contact Us
+                        </a> -->
+                        <a class="group inline-block relative focus:outline-hidden focus:ring-3" href="#">
+                            <span
+                                class="absolute inset-0 bg-gradient-to-t from-[#36cbd7] to-[#396fe3] transition-transform translate-x-1.5 translate-y-1.5 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+
+                            <span
+                                class="inline-block relative px-8 py-3 border-2 border-current font-bold text-black text-sm uppercase tracking-widest">
+                                Contact Us
+                            </span>
                         </a>
                     </div>
                 </header>
@@ -90,7 +99,10 @@
                         <div class="flex-none space-y-5 max-w-xl overflow-visible heroTitle-js">
                             <h1 class="font-extrabold font-stretch-semi-condensed text-gray-800 text-4xl md:text-5xl">
                                 Drive Your Business with
-                                <span class="text-blue-700">Cutting-Edge IT Solutions.</span>
+                                <span
+                                    class="bg-clip-text bg-gradient-to-t from-[#36cbd7] to-[#396fe3] text-transparent">Cutting-Edge
+                                    IT
+                                    Solutions.</span>
                             </h1>
                             <p>
                                 Whatever your unique idea or needs, we’ve got the tools and know how to build your
@@ -99,7 +111,7 @@
                             </p>
                             <div class="flex items-center gap-x-3 overflow-hidden sm:text-sm">
                                 <a href="javascript:void(0)"
-                                    class="md:inline-flex flex justify-center items-center gap-x-1 bg-gray-800 hover:bg-white active:bg-gray-900 px-4 md:px-5 py-2.5 md:py-4 hover:border-1 hover:border-black rounded-full font-medium text-white hover:text-black transition duration-275 ease-in-out delay-50">
+                                    class="md:inline-flex flex justify-center items-center gap-x-1 hover:bg-white active:bg-gray-900 bg-gradient-to-t from-[#36cbd7] to-[#396fe3] px-4 md:px-5 py-2.5 md:py-4 hover:border-1 hover:border-black rounded-full font-medium text-white hover:text-black transition duration-275 ease-in-out delay-50">
                                     Get started
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                         class="w-5 h-5">
@@ -328,7 +340,7 @@
                 </div>
 
                 <!--Our process-->
-                <section class="py-16 forthPage-js">
+                <section class="bg-white py-16 forthPage-js">
                     <div class="mx-auto px-4 max-w-screen-lg processHeading">
                         <h2 class="font-bold text-4xl text-center">Our Process
                         </h2>
