@@ -6,39 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../src/css/output.css">
+
 </head>
 
 <body>
-    <div class="relative h-screen">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0">
-            <div
-                class="-z-10 absolute inset-0 items-center px-5 py-24 w-full h-full [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]">
-            </div>
-        </div>
+    <div class="min-h-screen">
 
-        <!-- Hero Content -->
-        <div class="z-10 relative flex flex-col justify-center items-center px-4 h-full">
-            <div class="max-w-3xl text-center">
-                <h1 class="mb-8 font-bold text-white text-4xl sm:text-6xl lg:text-7xl tracking-tight">
-                    Your Next Great
-                    <span class="text-sky-400">Project</span>
-                </h1>
-                <p class="mx-auto mb-8 max-w-2xl text-slate-300 text-lg">
-                    Build modern and beautiful websites with this collection of stunning background patterns.
-                    Perfect for landing pages, apps, and dashboards.
-                </p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <button class="bg-sky-400 hover:bg-sky-300 px-6 py-3 rounded-lg font-medium text-slate-900">
-                        Get Started
-                    </button>
-                    <button
-                        class="bg-slate-800 hover:bg-slate-700 px-6 py-3 border border-slate-700 rounded-lg font-medium text-white">
-                        Learn More
-                    </button>
-                </div>
+        <header class="flex justify-between items-center px-6 py-4 border-gray-100 border-b">
+            <div class="flex items-center">
+                <Link href="/" class="font-medium text-2xl">
+                ~
+                </Link>
             </div>
-        </div>
+
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="/" class="font-medium text-gray-800 hover:text-gray-600 text-sm">
+                    About
+                </a>
+                <a href="/features" class="font-medium text-gray-800 hover:text-gray-600 text-sm">
+                    Clients
+                </a>
+                <a href="/pricing" class="font-medium text-gray-800 hover:text-gray-600 text-sm">
+                    Services
+                </a>
+                <a href="/about" class="font-medium text-gray-800 hover:text-gray-600 text-sm">
+                    About
+                </a>
+                <a href="/about" class="font-medium text-gray-800 hover:text-gray-600 text-sm">
+                    Blog
+                </a>
+            </nav>
+
+            <div>
+                <a href="/signup"
+                    class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 font-medium text-white text-sm">
+                    Contact Us
+                </a>
+            </div>
+        </header>
+
     </div>
 </body>
 

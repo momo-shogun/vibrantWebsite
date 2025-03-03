@@ -35,55 +35,53 @@
 </head>
 
 <body class="h-full overflow-hidden font-[Open_Sans]">
-    <div class="top-0 left-0 relative w-full overflow-hidden scroll-container will-change-transform"
-        x-data="{ state: false }">
+    <div class="top-0 left-0 relative w-full overflow-hidden scroll-container" x-data="{ state: false }">
         <div class="content">
-            <div class="absolute inset-0 blur-xl h-[580px] [&>div]:absolute [&>div]:top-0 [&>div]:right-0 [&>div]:z-[-2] [&>div]:h-full [&>div]:w-full [&>div]:bg-gradient-to-l [&>div]:from-blue-200 [&>div]:to-white"
-                id="a"></div>
+            <div class="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] [&>div]:absolute [&>div]:inset-0 [&>div]:w-full  [&>div]:bg-[radial-gradient(circle_at_center,#FF7112,transparent)] [&>div]:opacity-30 [&>div]:mix-blend-multiply"
+                id="a">
+                <div></div>
+            </div>
+            <div class="absolute inset-0">
+                <div
+                    class="relative h-full w-full [&>div]:absolute [&>div]:inset-0 [&>div]:bg-[radial-gradient(circle_at_center,#FF7112,transparent)] [&>div]:opacity-30 [&>div]:mix-blend-multiply">
+                    <div></div>
+
+                </div>
+            </div>
+
+
             <div class="relative">
                 <!--Header-->
-                <nav class="md:static border-b md:border-none w-full md:text-sm">
-                    <div class="md:flex items-center mx-auto px-4 md:px-8 max-w-screen-xl">
-                        <div class="md:block flex justify-between items-center py-3 md:py-5">
-                            <a class="text-teal-600" href="#">
-                                <span class="sr-only">Home</span>
-                                <img src="../src/assets/images/logo.png" class="w-[17rem] md:w-20 lg:min-w-xs"
-                                    alt="logo">
-                            </a>
-                            <div class="md:hidden">
-                                <button class="text-gray-500 hover:text-gray-800" onclick="toggleMenu()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div id="mobile-menu" class="hidden md:block flex-1 mt-8 md:mt-0 pb-3 md:pb-0">
-                            <ul class="md:flex justify-end items-center md:space-x-6 space-y-6 md:space-y-0">
-                                <li class="text-gray-700 hover:text-indigo-600"><a href="#">About</a>
-                                </li>
-                                <li class="text-gray-700 hover:text-indigo-600"><a href="#">Careers</a></li>
-                                <li class="text-gray-700 hover:text-indigo-600"><a href="#">Clients</a></li>
-                                <li class="text-gray-700 hover:text-indigo-600"><a href="#">Services</a>
-                                </li>
-                                <li class="text-gray-700 hover:text-indigo-600"><a href="#">Blog</a>
-                                </li>
-
-                                <div class='md:flex items-center gap-x-6 space-y-3 md:space-y-0'>
-                                    <li>
-                                        <a class="flex bg-blue-700 px-5 py-2 rounded-lg font-medium text-white text-sm"
-                                            href="#">
-                                            Contact Us
-                                        </a>
-                                    </li>
-
-                                </div>
-                            </ul>
-                        </div>
+                <header class="flex justify-between items-center px-6 py-4 border-orange-100 border-b">
+                    <div class="flex items-center">
+                        <Link href="/" class="font-medium text-2xl">
+                        ~
+                        </Link>
                     </div>
-                </nav>
+
+                    <nav class="hidden md:flex items-center space-x-8">
+                        <a href="/" class="font-bold text-gray-800 hover:text-gray-600 text-sm">
+                            About
+                        </a>
+                        <a href="/features" class="font-bold text-gray-800 hover:text-gray-600 text-sm">
+                            Clients
+                        </a>
+                        <a href="/pricing" class="font-bold text-gray-800 hover:text-gray-600 text-sm">
+                            Services
+                        </a>
+
+                        <a href="/about" class="font-bold text-gray-800 hover:text-gray-600 text-sm">
+                            Blog
+                        </a>
+                    </nav>
+
+                    <div>
+                        <a href="/signup"
+                            class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 font-bold text-white text-sm">
+                            Contact Us
+                        </a>
+                    </div>
+                </header>
 
                 <!-- Hero Section -->
                 <section class="pageOne-js">
