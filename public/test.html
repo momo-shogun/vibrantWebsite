@@ -4,49 +4,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../src/css/output.css">
 
+    <!--  CSS -->
+    <link rel="stylesheet" href="../src/css/output.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <!-- jQuery (Required for Owl Carousel) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+
+    <title>Vibrant It Solutions Pvt Ltd</title>
+    <style>
+        .scroll-container {
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+    </style>
 </head>
 
+<body class="h-full overflow-hidden font-[Open_Sans]">
+    <div class="relative mt-18 overflow-hidden">
+        <div class="flex gap-12 client-carousel">
+            <div class="flex justify-center items-center gap-2 companyLogo">
+                <img src="../src/assets/clients/bajaj.png" alt="bajaj" class="w-12">
+                <p class="font-semibold text-white text-2xl text-nowrap">Bajaj Sugar</p>
+            </div>
 
+            <div class="flex justify-center items-center gap-2 companyLogo">
+                <img src="../src/assets/clients/birla.jpg" alt="birla" class="w-12">
+                <p class="font-semibold text-white text-2xl text-nowrap">Birla Sugar</p>
+            </div>
 
-<body>
-    <div class="relative" x-data="{ state: false }">
-        div class="mx-auto max-w-sm">
-        <!-- Gradient border container -->
-        <div class="hover:shadow-[0_0_20px_10px_rgba(255,255,255,0.6)] hover:brightness-150 p-0.5 rounded-lg transition-shadow duration-300"
-            style="background-image: linear-gradient(to right, #4158D0, #C850C0, #FFCC70);">
-            <!-- Content container -->
-            <div class="bg-white rounded-lg">
-                <!-- Card header -->
-                <div class="p-4">
-                    <h2 class="font-semibold text-xl">Team Members</h2>
-                    <p class="text-gray-500 text-sm">Invite your team members to collaborate.</p>
-                </div>
-                <!-- Card content -->
-                <div class="space-y-6 p-4">
-                    <!-- Team member 1 -->
-                    <div class="flex items-center space-x-4">
-                        <img class="rounded-full w-12 h-12" src="/avatars/01.png" alt="Amelia Wilson">
-                        <div>
-                            <p class="font-medium text-sm">Amelia Wilson</p>
-                            <p class="text-gray-500 text-sm">m@example.com</p>
-                        </div>
-                    </div>
-                    <!-- Team member 2 -->
-                    <div class="flex items-center space-x-4">
-                        <img class="rounded-full w-12 h-12" src="/avatars/02.png" alt="Benjamin Anderson">
-                        <div>
-                            <p class="font-medium text-sm">Benjamin Anderson</p>
-                            <p class="text-gray-500 text-sm">p@example.com</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="flex justify-center items-center gap-2 companyLogo">
+                <img src="../src/assets/clients/dcm.jpg" alt="dcm" class="w-12">
+                <p class="font-semibold text-white text-2xl text-nowrap">DCM Shriram</p>
+            </div>
+
+            <div class="flex justify-center items-center gap-2 companyLogo">
+                <img src="../src/assets/clients/up-tourism.png" alt="lhsf" class="w-12">
+                <p class="font-semibold text-white text-2xl text-nowrap">UP Tourism</p>
             </div>
         </div>
     </div>
-    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script>
+
+        export function initClientAnimation() {
+            const wrapperText = document.querySelector(".clientHightlight");
+
+            if (wrapperText) {
+                wrapperText.innerHTML = wrapperText.textContent.split("")
+                    .map(char => `<span>${char}</span>`)
+                    .join("");
+
+                const spans = wrapperText.querySelectorAll(".clientHightlight span");
+
+                const tlCompanies = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: ".fifthPage-js",
+                        scroller: ".scroll-container",
+                        start: "top 90%",
+                        end: "0%",
+                        scrub: 0.7,
+                    }
+                });
+
+                tlCompanies.set(spans, { color: "#eee", stagger: 0.1 }, 0.1)
+                    .fromTo('.companyLogo', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1, stagger: 0.3 });
+
+                // Start carousel animation after initial transition
+                tlCompanies.add(() => startCarouselAnimation());
+            }
+        }
+
+        function startCarouselAnimation() {
+            const logosContainer = document.querySelector(".client-carousel");
+            const logos = document.querySelectorAll(".companyLogo");
+
+            // Clone the logos for seamless looping
+            logos.forEach((logo) => {
+                const clone = logo.cloneNode(true);
+                logosContainer.appendChild(clone);
+            });
+
+            gsap.to(logosContainer, {
+                x: "-50%", // Move half the width since we duplicated the logos
+                duration: 15,
+                ease: "linear",
+                repeat: -1, // Infinite loop
+            });
+        }
+
+    </script>
 </body>
 
 </html>
