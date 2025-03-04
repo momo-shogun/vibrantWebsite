@@ -37,7 +37,7 @@ function toggleMenu() {
 }
 
 //gradient
-// const b1 = "linear-gradient(240deg, #f86f3d59, rgba(232, 121, 249, 0.26) 40.92%, rgba(41, 104, 240, 0.123) 70.35%)";
+// const b1 = "background: #8ED5FB; background: radial-gradient(at left top, #8ED5FB, #EF69FE);";
 
 // document.querySelector("#a").style.background = b1;
 // document.querySelector("#a").style.backgroundSize = "300% 300%"; // Larger background area for smooth movement

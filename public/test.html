@@ -9,42 +9,43 @@
 
 </head>
 
+
+
 <body>
-    <div class="min-h-screen">
-
-        <header class="flex justify-between items-center px-6 py-4 border-gray-100 border-b">
-            <div class="flex items-center">
-                <Link href="/" class="font-medium text-2xl">
-                ~
-                </Link>
+    <div class="relative" x-data="{ state: false }">
+        div class="mx-auto max-w-sm">
+        <!-- Gradient border container -->
+        <div class="hover:shadow-[0_0_20px_10px_rgba(255,255,255,0.6)] hover:brightness-150 p-0.5 rounded-lg transition-shadow duration-300"
+            style="background-image: linear-gradient(to right, #4158D0, #C850C0, #FFCC70);">
+            <!-- Content container -->
+            <div class="bg-white rounded-lg">
+                <!-- Card header -->
+                <div class="p-4">
+                    <h2 class="font-semibold text-xl">Team Members</h2>
+                    <p class="text-gray-500 text-sm">Invite your team members to collaborate.</p>
+                </div>
+                <!-- Card content -->
+                <div class="space-y-6 p-4">
+                    <!-- Team member 1 -->
+                    <div class="flex items-center space-x-4">
+                        <img class="rounded-full w-12 h-12" src="/avatars/01.png" alt="Amelia Wilson">
+                        <div>
+                            <p class="font-medium text-sm">Amelia Wilson</p>
+                            <p class="text-gray-500 text-sm">m@example.com</p>
+                        </div>
+                    </div>
+                    <!-- Team member 2 -->
+                    <div class="flex items-center space-x-4">
+                        <img class="rounded-full w-12 h-12" src="/avatars/02.png" alt="Benjamin Anderson">
+                        <div>
+                            <p class="font-medium text-sm">Benjamin Anderson</p>
+                            <p class="text-gray-500 text-sm">p@example.com</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="/" class="font-medium text-gray-800 hover:text-gray-600 text-sm">
-                    About
-                </a>
-                <a href="/features" class="font-medium text-gray-800 hover:text-gray-600 text-sm">
-                    Clients
-                </a>
-                <a href="/pricing" class="font-medium text-gray-800 hover:text-gray-600 text-sm">
-                    Services
-                </a>
-                <a href="/about" class="font-medium text-gray-800 hover:text-gray-600 text-sm">
-                    About
-                </a>
-                <a href="/about" class="font-medium text-gray-800 hover:text-gray-600 text-sm">
-                    Blog
-                </a>
-            </nav>
-
-            <div>
-                <a href="/signup"
-                    class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 font-medium text-white text-sm">
-                    Contact Us
-                </a>
-            </div>
-        </header>
-
+        </div>
+    </div>
     </div>
 </body>
 
