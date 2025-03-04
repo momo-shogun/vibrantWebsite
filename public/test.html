@@ -11,148 +11,64 @@
 
 
 
-<body>
-    <div>
-        <section class="bg-gray-50 py-16">
-            <div class="mx-auto px-4 md:px-8 max-w-screen-xl">
-                <div class="max-w-md">
-                    <h1 class="font-extrabold text-gray-800 text-xl sm:text-2xl">
-                        Integrations
-                    </h1>
-                    <p class="mt-2 text-gray-600">
-                        Extend and automate your workflow by using integrations for your
-                        favorite tools.
-                    </p>
+<div class="relative">
+    <div class="relative">
+        <!--Header-->
+        <nav class="md:static border-b md:border-none w-full md:text-sm">
+            <div class="md:flex items-center mx-auto px-4 md:px-8 max-w-screen-xl">
+                <div class="md:block flex justify-between items-center py-3 md:py-5">
+                    <a href="/" class="w-[12rem]">
+                        <img src="../src/assets/images/logo.png" alt="logo" class="w-full">
+                    </a>
+                    <div class="md:hidden">
+                        <button class="text-gray-500 hover:text-gray-800" onclick="toggleMenu()">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-                <ul class="gap-8 grid sm:grid-cols-2 lg:grid-cols-3 mt-16">
-                    <figure
-                        class="relative bg-gray-950/[.01] hover:bg-gray-950/[.05] dark:hover:bg-gray-50/[.15] dark:bg-gray-50/[.10] p-4 border border-gray-950/[.1] dark:border-gray-50/[.1] rounded-xl w-64 overflow-hidden cursor-pointer">
-                        <div class="flex flex-row items-center gap-2"><img alt="Jack" loading="lazy" width="32"
-                                height="32" decoding="async" data-nimg="1" class="rounded-full"
-                                style="color:transparent"
-                                srcset="/_next/image?url=https%3A%2F%2Fimg.buoucoding.com%2Favatar%2F0004.png&amp;w=32&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fimg.buoucoding.com%2Favatar%2F0004.png&amp;w=64&amp;q=75 2x"
-                                src="/_next/image?url=https%3A%2F%2Fimg.buoucoding.com%2Favatar%2F0004.png&amp;w=64&amp;q=75">
-                            <div class="flex flex-col">
-                                <figcaption class="font-medium dark:text-white text-sm">Jack</figcaption>
-                                <p class="font-medium dark:text-white/40 text-xs">@Tencent</p>
-                            </div>
-                        </div>
-                        <blockquote class="mt-2 text-sm">It's very easy and powerful.</blockquote>
-                    </figure>
-
-                    <li class="shadow-sm hover:shadow-md border rounded-lg transition duration-150">
-                        <div class="flex justify-between items-start p-4">
-                            <div class="space-y-2">
-                                <!-- Replace with actual Github SVG -->
-                                <svg>...</svg>
-                                <h4 class="font-semibold text-gray-800">Github</h4>
-                                <p class="text-gray-600 text-sm">Ut enim ad minim veniam</p>
-                            </div>
-                            <button
-                                class="hover:bg-gray-100 px-3 py-2 border rounded-lg text-gray-700 text-sm duration-150">
-                                Connect
-                            </button>
-                        </div>
-                        <div class="px-4 py-5 border-t text-right">
-                            <a href="javascript:void(0)"
-                                class="font-medium text-indigo-600 hover:text-indigo-500 text-sm">
-                                View integration
+                <div id="mobile-menu" class="hidden md:block flex-1 mt-8 md:mt-0 pb-3 md:pb-0">
+                    <ul class="md:flex justify-end items-center md:space-x-6 space-y-6 md:space-y-0">
+                        <li class="text-gray-700 hover:text-indigo-600"> <a href="/"
+                                class="font-bold text-gray-800 hover:text-gray-600 text-sm">
+                                About
                             </a>
-                        </div>
-                    </li>
+                        </li>
+                        <li class="text-gray-700 hover:text-indigo-600"><a href="#">Careers</a></li>
+                        <li class="text-gray-700 hover:text-indigo-600"><a href="#">Clients</a></li>
+                        <li class="text-gray-700 hover:text-indigo-600"><a href="#">Services</a>
+                        </li>
+                        <li class="text-gray-700 hover:text-indigo-600"><a href="#">Blog</a>
+                        </li>
 
-                    <li class="shadow-sm hover:shadow-md border rounded-lg transition duration-150">
-                        <div class="flex justify-between items-start p-4">
-                            <div class="space-y-2">
-                                <!-- Replace with actual Discord SVG -->
-                                <svg>...</svg>
-                                <h4 class="font-semibold text-gray-800">Discord</h4>
-                                <p class="text-gray-600 text-sm">Ut enim ad minim veniam</p>
-                            </div>
-                            <button
-                                class="hover:bg-gray-100 px-3 py-2 border rounded-lg text-gray-700 text-sm duration-150">
-                                Connect
-                            </button>
+                        <div class='md:flex items-center gap-x-6 space-y-3 md:space-y-0'>
+                            <li>
+                                <a class="group inline-block relative focus:outline-hidden focus:ring-3" href="#">
+                                    <span
+                                        class="absolute inset-0 bg-gradient-to-t from-[#d3977f] to-[#f7704b] transition-transform translate-x-1.5 translate-y-1.5 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+
+                                    <span
+                                        class="inline-block relative px-4 md:px-8 py-2 md:py-3 border-2 border-current font-bold text-black text-sm uppercase tracking-widest">
+                                        Contact Us
+                                    </span>
+                                </a>
+                            </li>
+
                         </div>
-                        <div class="px-4 py-5 border-t text-right">
-                            <a href="javascript:void(0)"
-                                class="font-medium text-indigo-600 hover:text-indigo-500 text-sm">
-                                View integration
-                            </a>
-                        </div>
-                    </li>
-                </ul>
+                    </ul>
+                </div>
             </div>
-        </section>
+        </nav>
     </div>
+</div>
 
-    <!-- Example Styling -->
-    <style>
-        /* General Styles */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f9fafb;
-            margin: 0;
-            padding: 0;
-        }
-
-        .font-extrabold {
-            font-weight: 800;
-        }
-
-        .text-gray-800 {
-            color: #2d3748;
-        }
-
-        .text-gray-600 {
-            color: #4a5568;
-        }
-
-        .text-indigo-600 {
-            color: #5a67d8;
-        }
-
-        .hover\:bg-gray-100:hover {
-            background-color: #f7fafc;
-        }
-
-        .hover\:text-indigo-500:hover {
-            color: #4c51bf;
-        }
-
-        .font-medium {
-            font-weight: 500;
-        }
-
-        .text-right {
-            text-align: right;
-        }
-
-        .space-y-2>*+* {
-            margin-top: 0.5rem;
-        }
-
-        .rounded-lg {
-            border-radius: 0.5rem;
-        }
-
-        .border {
-            border: 1px solid #e2e8f0;
-        }
-
-        .shadow-sm {
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-        }
-
-        .transition {
-            transition: all 0.3s ease;
-        }
-
-        .duration-150 {
-            transition-duration: 150ms;
-        }
-    </style>
-
+<script>function toggleMenu() {
+        var menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
+    }</script>
 </body>
 
 </html>
