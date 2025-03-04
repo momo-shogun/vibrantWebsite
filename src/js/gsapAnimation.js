@@ -253,39 +253,43 @@ export function initProcessAnimation() {
 }
 
 // ✅ Our Client Page Animation
-// Remove previous spans if they exist  
-const wrapperText = document.querySelector(".clientHightlight");
+export function initClientAnimation() {
+    // Remove previous spans if they exist  
+    const wrapperText = document.querySelector(".clientHightlight");
 
-wrapperText.innerHTML = wrapperText.textContent.split("").map(char => `<span>${char}</span>`).join("");
+    wrapperText.innerHTML = wrapperText.textContent.split("").map(char => `<span>${char}</span>`).join("");
 
-// Get the spans
-const spans = wrapperText.querySelectorAll(".clientHightlight span");
+    // Get the spans
+    const spans = wrapperText.querySelectorAll(".clientHightlight span");
 
-const tlCompanies = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".fifthPage-js",
-        scroller: ".scroll-container",
-        start: "top 90%",
-        end: "0%",
-        scrub: 0.7,
+    const tlCompanies = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".fifthPage-js",
+            scroller: ".scroll-container",
+            start: "top 90%",
+            end: "0%",
+            scrub: 0.7,
 
-    }
-})
-    .set(
-        spans,
-        {
-            color: "#eee",
-            stagger: 0.1
-        },
-        0.1
-    );
+        }
+    })
+        .set(
+            spans,
+            {
+                color: "#eee",
+                stagger: 0.1
+            },
+            0.1
+        );
 
-tlCompanies.fromTo('.companyLogo1', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 2 })
-tlCompanies.fromTo('.companyLogo2', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 2 })
-tlCompanies.fromTo('.companyLogo3', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 2 })
-tlCompanies.fromTo('.companyLogo4', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 2 })
+    tlCompanies.fromTo('.companyLogo1', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 2 })
+    tlCompanies.fromTo('.companyLogo2', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 2 })
+    tlCompanies.fromTo('.companyLogo3', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 2 })
+    tlCompanies.fromTo('.companyLogo4', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 2 })
+        .add(() => {
+            $(".client-carousel").owlCarousel("play.owl.autoplay");
 
-
+        })
+}
 
 
 // ✅ Testimonials Animation

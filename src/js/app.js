@@ -4,6 +4,7 @@ import {
     initStatsAnimation,
     initFeaturesAnimation,
     initProcessAnimation,
+    initClientAnimation,
     initTestimonialsAnimation
 } from './gsapAnimation.js';
 
@@ -28,6 +29,7 @@ $(document).ready(function () {
             1000: { items: 3 }
         }
     });
+
 });
 
 //menu
@@ -57,5 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
     initStatsAnimation();
     initFeaturesAnimation();
     initProcessAnimation();
+    initClientAnimation();
     initTestimonialsAnimation();
 });
