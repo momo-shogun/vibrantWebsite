@@ -167,41 +167,88 @@ export function initStatsAnimation() {
 
 // ✅ Features Page Animation
 export function initFeaturesAnimation() {
-    const tlFeature = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".thirdPage-js",
-            scrub: 2,
-            scroller: ".scroll-container",
-            start: "-50%",
-            end: "50%",
-        },
-    });
+    const mm = gsap.matchMedia();
 
-    tlFeature.fromTo('.featureHeading', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1 });
-
-    tlFeature.from(".service-js", {
-        opacity: 0,
-        y: 20,
-        stagger: 0.2,
-        ease: "linear"
-    });
-
-    document.querySelectorAll(".service-js").forEach((button) => {
-        button.addEventListener("mouseenter", () => {
-            gsap.to(button, {
-                scale: 1.1,
-                background: "linear-gradient(264deg, #4B0082 20%  , #1447e6  )",
-                duration: 0.3,
-                ease: "power2.out"
-            });
+    mm.add("(min-width: 1025px)", () => {
+        // Desktop animation
+        const tlFeature = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".thirdPage-js",
+                scrub: 2,
+                scroller: ".scroll-container",
+                start: "-50%",
+                end: "50%",
+            },
         });
 
-        button.addEventListener("mouseleave", () => {
-            gsap.to(button, {
-                scale: 1,
-                background: "#000",
-                duration: 1,
-                ease: "power2.out",
+        tlFeature.fromTo('.featureHeading', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1 });
+
+        tlFeature.from(".service-js", {
+            opacity: 0,
+            y: 20,
+            stagger: 0.2,
+            ease: "linear"
+        });
+
+        document.querySelectorAll(".service-js").forEach((button) => {
+            button.addEventListener("mouseenter", () => {
+                gsap.to(button, {
+                    scale: 1.1,
+                    background: "linear-gradient(264deg, #4B0082 20%  , #1447e6  )",
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+
+            button.addEventListener("mouseleave", () => {
+                gsap.to(button, {
+                    scale: 1,
+                    background: "#000",
+                    duration: 1,
+                    ease: "power2.out",
+                });
+            });
+        });
+    })
+
+    mm.add("(max-width: 1024px)", () => {
+        // Mobile & Tablet animation
+        const tlFeature = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".thirdPage-js",
+                scrub: "true",
+                scroller: ".scroll-container",
+                start: "-30%",
+                end: "80%",
+            },
+        });
+
+        tlFeature.fromTo('.featureHeading', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: "1.5" });
+
+        tlFeature.from(".service-js", {
+            opacity: 0,
+            y: 20,
+            stagger: 0.2,
+            ease: "linear"
+        }, "<30%");
+
+        document.querySelectorAll(".service-js").forEach((button) => {
+            button.addEventListener("mouseenter", () => {
+                gsap.to(button, {
+                    scale: 1.1,
+                    background: "linear-gradient(264deg, #4B0082 20%  , #1447e6  )",
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+
+            button.addEventListener("mouseleave", () => {
+                gsap.to(button, {
+                    scale: 1,
+                    background: "#000",
+                    duration: 1,
+                    ease: "power2.out",
+                });
             });
         });
     });
