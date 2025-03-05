@@ -1,400 +1,1193 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--  CSS -->
+    <link rel="stylesheet" href="../src/css/output.css" />
     <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
     <!-- jQuery (Required for Owl Carousel) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Owl Carousel JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 
-    <title>Vibrant</title>
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
+    />
+    <style>
+      .scroll-container {
+        will-change: transform;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+      }
+    </style>
+    <title>Vibrant IT Solutions</title>
+  </head>
 
-<body class="font-[Open_Sans]">
-    <!--Header-->
-    <header class="md:static px-6 py-3 pt-4 border-b w-full md:text-sm">
-        <div class="flex justify-between items-center">
-            <div <div class="flex items-center">
-                <a href="/" class="w-[8rem] md:w-[12rem]">
-                    <img src="../src/assets/images/logo.png" alt="logo" class="w-full h-full">
-                </a>
+  <body class="h-full overflow-hidden font-[Open_Sans]">
+    <div
+      class="scroll-container top-0 left-0 relative w-full overflow-hidden"
+      x-data="{ state: false }"
+    >
+      <div class="content">
+        <div
+          class="inset-0 blur-xl absolute h-[580px]"
+          style="
+            background: linear-gradient(
+              143.6deg,
+              rgba(149, 167, 247, 0.171) 20.79%,
+              rgba(255, 202, 152, 0.411) 90.92%,
+              rgba(215, 176, 255, 0.288) 40.35%
+            );
+          "
+        ></div>
+      </div>
+      <div class="relative">
+        <!--Header-->
+        <header class="px-6 py-3 pt-4 md:static md:text-sm w-full border-b">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center">
+              <a href="/" class="md:w-[12rem] w-[8rem]">
+                <img
+                  src="../src/assets/images/logo.png"
+                  alt="logo"
+                  class="h-full w-full"
+                />
+              </a>
             </div>
 
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="/" class="font-bold text-gray-800 hover:text-gray-600 text-sm">
-                    About
-                </a>
-                <a href="/features" class="font-bold text-gray-800 hover:text-gray-600 text-sm">
-                    Clients
-                </a>
-                <a href="./ourServices.html" class="font-bold text-gray-800 hover:text-gray-600 text-sm">
-                    Services
-                </a>
+            <nav class="space-x-8 md:flex hidden items-center">
+              <a
+                href="/"
+                class="text-sm font-bold text-gray-800 hover:text-gray-600"
+              >
+                About
+              </a>
+              <a
+                href="/features"
+                class="text-sm font-bold text-gray-800 hover:text-gray-600"
+              >
+                Clients
+              </a>
+              <a
+                href="./ourServices.html"
+                class="text-sm font-bold text-gray-800 hover:text-gray-600"
+              >
+                Services
+              </a>
 
-                <a href="/about" class="font-bold text-gray-800 hover:text-gray-600 text-sm">
-                    Blog
-                </a>
+              <a
+                href="/about"
+                class="text-sm font-bold text-gray-800 hover:text-gray-600"
+              >
+                Blog
+              </a>
             </nav>
 
-            <div class="hidden md:flex">
-                <!-- <a href="/signup"
-                        class="hover:bg-purple-700 bg-gradient-to-t from-[#36cbd7] to-[#396fe3] px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 font-bold text-white text-sm">
-                        Contact Us
-                    </a> -->
-                <a class="group inline-block relative focus:outline-hidden focus:ring-3" href="#">
-                    <span
-                        class="absolute inset-0 bg-gradient-to-t from-[#d3977f] to-[#f7704b] transition-transform translate-x-1.5 translate-y-1.5 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+            <div class="md:flex hidden">
+              <!-- <a href="/signup"
+                          class="hover:bg-purple-700 bg-gradient-to-t from-[#36cbd7] to-[#396fe3] px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 font-bold text-white text-sm">
+                          Contact Us
+                      </a> -->
+              <a
+                class="group relative inline-block focus:ring-3 focus:outline-hidden"
+                href="#"
+              >
+                <span
+                  class="inset-0 translate-x-1.5 translate-y-1.5 group-hover:translate-x-0 group-hover:translate-y-0 absolute bg-gradient-to-t from-[#d3977f] to-[#f7704b] transition-transform"
+                ></span>
 
-                    <span
-                        class="inline-block relative px-4 md:px-8 py-2 md:py-3 border-2 border-current font-bold text-black text-sm uppercase tracking-widest">
-                        Contact Us
-                    </span>
-                </a>
+                <span
+                  class="px-4 py-2 text-sm font-bold tracking-widest text-black md:px-8 md:py-3 relative inline-block border-2 border-current uppercase"
+                >
+                  Contact Us
+                </span>
+              </a>
             </div>
 
             <!-- for Mobile Devices -->
             <div class="md:hidden">
-                <button class="text-gray-500 hover:text-gray-800" onclick="toggleMenu()">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="1.5">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg>
-                </button>
+              <button
+                class="text-gray-500 hover:text-gray-800"
+                onclick="toggleMenu()"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+              </button>
             </div>
-        </div>
-        <div id="mobile-menu" class="hidden flex-1 mt-8 md:mt-0 pb-3 md:pb-0">
-            <ul class="md:flex justify-end items-center md:space-x-6 space-y-6 md:space-y-0 text-center">
-                <li class="text-gray-700 hover:text-indigo-600"> <a href="/"
-                        class="font-bold text-gray-800 hover:text-gray-600 text-sm">
-                        About
-                    </a>
-                </li>
-                <li class="text-gray-700 hover:text-indigo-600"><a href="#">Careers</a></li>
-                <li class="text-gray-700 hover:text-indigo-600"><a href="#">Clients</a></li>
-                <li class="text-gray-700 hover:text-indigo-600"><a href="#">Services</a>
-                </li>
-                <li class="text-gray-700 hover:text-indigo-600"><a href="#">Blog</a>
-                </li>
+          </div>
+          <div id="mobile-menu" class="mt-8 pb-3 md:mt-0 md:pb-0 hidden flex-1">
+            <ul
+              class="space-y-6 md:flex md:space-y-0 md:space-x-6 items-center justify-end text-center"
+            >
+              <li class="text-gray-700 hover:text-indigo-600">
+                <a
+                  href="/"
+                  class="text-sm font-bold text-gray-800 hover:text-gray-600"
+                >
+                  About
+                </a>
+              </li>
+              <li class="text-gray-700 hover:text-indigo-600">
+                <a href="#">Careers</a>
+              </li>
+              <li class="text-gray-700 hover:text-indigo-600">
+                <a href="#">Clients</a>
+              </li>
+              <li class="text-gray-700 hover:text-indigo-600">
+                <a href="#">Services</a>
+              </li>
+              <li class="text-gray-700 hover:text-indigo-600">
+                <a href="#">Blog</a>
+              </li>
 
-                <div class='md:flex items-center gap-x-6 space-y-3 md:space-y-0'>
-                    <li>
-                        <a class="group inline-block relative focus:outline-hidden focus:ring-3" href="#">
-                            <span
-                                class="absolute inset-0 bg-gradient-to-t from-[#d3977f] to-[#f7704b] transition-transform translate-x-1.5 translate-y-1.5 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+              <div class="space-y-3 gap-x-6 md:flex md:space-y-0 items-center">
+                <li>
+                  <a
+                    class="group relative inline-block focus:ring-3 focus:outline-hidden"
+                    href="#"
+                  >
+                    <span
+                      class="inset-0 translate-x-1.5 translate-y-1.5 group-hover:translate-x-0 group-hover:translate-y-0 absolute bg-gradient-to-t from-[#d3977f] to-[#f7704b] transition-transform"
+                    ></span>
 
-                            <span
-                                class="inline-block relative px-4 md:px-8 py-2 md:py-3 border-2 border-current font-bold text-black text-sm uppercase tracking-widest">
-                                Contact Us
-                            </span>
-                        </a>
-                    </li>
-
-                </div>
+                    <span
+                      class="px-4 py-2 text-sm font-bold tracking-widest text-black md:px-8 md:py-3 relative inline-block border-2 border-current uppercase"
+                    >
+                      Contact Us
+                    </span>
+                  </a>
+                </li>
+              </div>
             </ul>
-        </div>
-    </header>
-
-    <!--landing page-->
-    <section class="">
-        <div class="ms-10 sm:px-6 lg:px-8 py-12 md:py-24 max-w-3xl text-gray-800">
+          </div>
+        </header>
+        <!--landing page-->
+        <section class="">
+          <div class="max-w-3xl px-4 py-24 text-gray-800 md:px-8 md:py-16">
             <!-- Top Text -->
-            <p class="font-[300] text-md text-slate-900 uppercase leading-4">At Vibrant IT Solutions</p> 
+            <p
+              class="text-md my-4 leading-4 text-slate-900 font-[300] uppercase"
+            >
+              At Vibrant IT Solutions
+            </p>
 
-            <h1 class="font-normal text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tight">
-                We craft solutions like puzzle
-                <span class="inline-flex items-center">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-a82HuO1B1DXXZsegbqMSfRmVUfB4vD.png"
-                        alt="Shield emblem" class="mx-2 w-12 md:w-16 h-12 md:h-16 object-contain" loading="lazy" />
-                </span>
-                pieces-tailor-made
+            <h1
+              class="text-5xl leading-tight font-normal tracking-tight md:text-6xl lg:text-7xl"
+            >
+              We craft solutions like puzzle
+              <span
+                id="puzzel-container"
+                class="inline-flex items-center overflow-hidden"
+              >
+                <img
+                  src="../src/assets/ourServices/Group 1.png"
+                  alt="Shield emblem"
+                  class="mx-2 h-12 w-12 md:h-16 md:w-16 object-contain"
+                />
+                <!-- <img src="../src/assets/ourServices/Group 2.png"
+                          alt="Shield emblem" class="mx-2 w-12 md:w-16 h-12 md:h-16 object-contain"/> -->
+              </span>
+              pieces-tailor-made
             </h1>
 
             <!-- Reviews Section -->
-            <div class="flex sm:flex-row flex-col gap-8 pt-8 text-black">
-                <!-- Clutch Reviews -->
-                <div class="flex items-center gap-4">
-                    <div class="font-semibold text-xl">Clutch</div>
-                    <div class="flex flex-col">
-                        <div class="font-medium">5 Star Reviews</div>
-                        <div class="text-gray-500 text-sm">on Clutch</div>
-                    </div>
+            <div
+              class="mt-20 gap-2 pt-8 text-black md:mt-0 md:flex-row md:gap-8 flex flex-col"
+            >
+              <div class="gap-4 flex items-center">
+                <img
+                  src="../src/assets/clients/up-tourism.png"
+                  alt="UP Tourism"
+                  class="h-20 w-20 object-contain"
+                />
+                <div class="flex flex-col">
+                  <div class="text-xl font-semibold">UP Tourism</div>
+                  <div class="font-medium">5 Star Reviews</div>
                 </div>
-
-                <!-- Upwork Reviews -->
-                <div class="flex items-center gap-4">
-                    <div class="font-semibold text-[#14a800] text-xl">Upwork</div>
-                    <div class="flex flex-col">
-                        <div class="font-medium">5 Star Reviews</div>
-                        <div class="text-gray-500 text-sm">on Upwork</div>
-                    </div>
+              </div>
+              <div class="gap-4 flex items-center">
+                <img
+                  src="../src/assets/clients/wave.jpg"
+                  alt="UP Tourism"
+                  class="h-20 w-20 object-contain"
+                />
+                <div class="flex flex-col">
+                  <div class="text-xl font-semibold">Wave Industries</div>
+                  <div class="font-medium">5 Star Reviews</div>
                 </div>
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
+        </section>
 
-    <!--footer page-->
-    <footer class="bg-gray-100 rounded-3xl">
-        <div class="mx-auto px-4 sm:px-6 lg:px-8 py-16 max-w-screen-xl">
-            <div class="lg:flex lg:items-start lg:gap-8">
-                <a href="/" class="w-[12rem]">
-                    <img src="../src/assets/images/logo.png" alt="logo" class="w-full">
+        <!--service1-->
+        <main class="mx-auto bg-[#f6f6f6]">
+          <div
+            class="gap-8 px-4 py-8 md:grid-cols-2 md:px-8 md:py-20 grid grid-cols-1"
+          >
+            <!-- Left Column -->
+            <div class="flex flex-col justify-between">
+              <div class="text-normal mb-4 font-light text-black">(01)</div>
+
+              <div class="max-w-md bg-black relative aspect-square w-full">
+                <img
+                  src="https://plus.unsplash.com/premium_photo-1679691282737-bc3dac4499a3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyfHx8ZW58MHx8fHx8"
+                  class="h-full w-full object-cover"
+                />
+                <div class="inset-0 absolute flex items-center justify-center">
+                  <div
+                    class="text-4xl font-bold tracking-wider text-white text-center"
+                  >
+                    <span>°Mobile Apps Development</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8 leading-relaxed text-neutral-500">
+                <p class="max-w-md text-xl leading-6 md:text-sm">
+                  We set up a strong foundation of your brand's personality.
+                  From logo design to a complete visual identity, we help your
+                  products catch eyes, win hearts, and live rent-free in your
+                  audience's mind.
+                </p>
+              </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="flex flex-col">
+              <h1
+                class="mb-9 text-5xl font-light text-neutral-900 md:mt-12 md:mb-16"
+              >
+                Software Development <br />
+                & IT Solutions
+              </h1>
+
+              <nav class="mt-0 space-y-6 md:mt-8">
+                <a
+                  href="#"
+                  class="border-neutral-200 py-3 relative block border-b"
+                >
+                  <span
+                    class="leading-6 font-normal tracking-wider companyLogo1"
+                    >Web Applications Development</span
+                  >
                 </a>
 
-                <div class="gap-8 lg:gap-y-16 grid grid-cols-2 lg:grid-cols-4 mt-8 lg:mt-0">
-                    <div class="col-span-2">
-                        <div>
-                            <h2 class="font-bold text-gray-900 text-2xl">Chat With Us!</h2>
+                <a href="#" class="border-neutral-200 py-3 block border-b">
+                  <span class="leading-6 font-normal tracking-wider"
+                    >School Management System (ERP)</span
+                  >
+                </a>
 
-                            <p class="mt-4 text-gray-500">
-                                Need help with your IT project? Chat with us today and let’s bring your ideas to
-                                life!
-                            </p>
-                        </div>
-                    </div>
+                <a href="#" class="border-neutral-200 py-3 block border-b">
+                  <span class="leading-6 font-normal tracking-wider"
+                    >Software Product Testing
+                  </span>
+                </a>
 
-                    <div class="lg:flex lg:items-end col-span-2 lg:col-span-3">
-                        <form class="ms-auto" action="mailto:someone@example.com" method="post"
-                            enctype="text/plain">
-                            <div class="relative sm:flex justify-between sm:items-center sm:gap-4 space-y-4 md:space-y-0 p-2 max-w-lg">
-                                <svg class="top-4 left-3 absolute md:inset-y-0 my-auto w-6 h-6 text-gray-800"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    strokeWidth="{1.5}" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round"
-                                        d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                                </svg>
-                                <input type="email" required placeholder="Enter your email"
-                                    class="bg-white shadow-sm py-2 pr-3 pl-12 border focus:border-indigo-600 rounded-lg outline-none w-full text-gray-500" />
-                                <button
-                                    class="flex justify-center items-center gap-2 bg-blue-500 hover:bg-blue-600 mt-1 sm:mt-0 px-6 py-3 rounded-lg w-full sm:w-auto font-bold text-white text-sm uppercase tracking-wide transition-none sm:shrink-0">
-                                    Sent
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round"
-                                        class="lucide lucide-send">
-                                        <path
-                                            d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
-                                        <path d="m21.854 2.147-10.94 10.939" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+                <a href="#" class="border-neutral-200 py-3 block border-b">
+                  <span class="leading-6 font-normal tracking-wider"
+                    >Mobile Apps Development
+                  </span>
+                </a>
 
-                    <div class="col-span-2 sm:col-span-1">
-                        <p class="font-medium text-gray-900">Services</p>
-                        <ul class="space-y-2 mt-2.5 text-sm">
-                            <li><a href="software_dovelopment.html"
-                                    class="hover:opacity-75 text-gray-700 transition">Software
-                                    Development</a>
-                            </li>
-                            <li><a href="web_application.html"
-                                    class="hover:opacity-75 text-gray-700 transition">Web
-                                    Applications
-                                    Development</a></li>
-                            <li><a href="website_dovelopment.html"
-                                    class="hover:opacity-75 text-gray-700 transition">Web Design
-                                    &amp;
-                                    Development</a></li>
-                            <li><a href="hosting.html" class="hover:opacity-75 text-gray-700 transition">Hosting
-                                    &amp; Domain registration</a></li>
-                            <li><a href="bulk_sms.html" class="hover:opacity-75 text-gray-700 transition">Bulk
-                                    Sms Services</a></li>
-                            <li><a href="gps_tracking.html"
-                                    class="hover:opacity-75 text-gray-700 transition">GPS Tracking
-                                    Device</a>
-                            </li>
-                            <li><a href="bio-metric.html"
-                                    class="hover:opacity-75 text-gray-700 transition">Biometric
-                                    Attendance
-                                    Device</a></li>
-                            <li><a href="real_state.html" class="hover:opacity-75 text-gray-700 transition">Real
-                                    Estate CRM</a></li>
-                            <li><a href="school_management.html"
-                                    class="hover:opacity-75 text-gray-700 transition">School
-                                    Management
-                                    System(ERP)</a></li>
-                        </ul>
-                    </div>
+                <a href="#" class="border-neutral-200 py-3 block border-b">
+                  <span class="leading-6 font-normal tracking-wider"
+                    >Real Estate CRM
+                  </span>
+                </a>
+              </nav>
+            </div>
+          </div>
 
-                    <div class="col-span-2 sm:col-span-1">
-                        <p class="font-medium text-gray-900">Company</p>
-                        <ul class="space-y-2 mt-2.5 text-sm">
-                            <li><a href="hrms.html" class="hover:opacity-75 text-gray-700 transition">HRMS</a>
-                            </li>
-                            <li><a href="erp.html" class="hover:opacity-75 text-gray-700 transition">School
-                                    ERP</a></li>
-                            <li><a href="school_android.html"
-                                    class="hover:opacity-75 text-gray-700 transition">School ERP
-                                    Android</a>
-                            </li>
-                            <li><a href="pos.html" class="hover:opacity-75 text-gray-700 transition">Point
-                                    Of
-                                    Sale</a></li>
-                            <li><a href="pos_touch_enabled.html"
-                                    class="hover:opacity-75 text-gray-700 transition">POS Touch
-                                    Enabled</a>
-                            </li>
-                            <li><a href="web_based_sales.html"
-                                    class="hover:opacity-75 text-gray-700 transition">Web Based
-                                    Sale</a>
-                            </li>
+          <div class="gap-5 px-4 py-8 md:grid-cols-3 md:px-8 grid grid-cols-1">
+            <div class="max-w-md space-y-1">
+              <img
+                src="https://upstdc.co.in/Content/assets/img/about/card-img-5-1.jpg"
+                alt=""
+                class="object-cover"
+              />
+              <div class="text-2xl leading-10 font-normal tracking-wider">
+                UP Tourism
+              </div>
+              <div class="">Tourism</div>
+            </div>
+            <div class="">
+              <img
+                src="https://magadhsugar.com/wp-content/uploads/2024/07/DJI_0198-2-scaled.jpg"
+                alt=""
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div class="">
+              <img
+                src="https://scontent.fdel27-6.fna.fbcdn.net/v/t39.30808-6/473330040_600592882915729_8860359339661467589_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=111&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=kOlrORYtjWkQ7kNvgHIi9ON&_nc_oc=Adij5r_0Zqr-ZfV3N8dwGx9RhJ00f-oUCBpUFlBtMSXDyZvMcYf6FqmjkME62oiMRkI&_nc_zt=23&_nc_ht=scontent.fdel27-6.fna&_nc_gid=A1gFetaCb4djE5jEJW68GHK&oh=00_AYC06MFaHLZNHh5rwxQwtj4Id9bNP4l_OssWMtBAUwAiBw&oe=67CDD15D"
+                alt=""
+                class="h-full w-full object-contain"
+              />
+            </div>
+          </div>
+        </main>
 
+        <!--service2-->
+        <main class="bg-white mx-auto">
+          <div
+            class="gap-8 px-4 py-8 md:grid-cols-2 md:px-8 md:py-20 grid grid-cols-1"
+          >
+            <!-- Left Column -->
+            <div class="flex flex-col justify-between">
+              <div class="text-normal mb-4 font-light text-black">(02)</div>
 
-                        </ul>
-                    </div>
-
-                    <div class="col-span-2 sm:col-span-1">
-                        <p class="font-medium text-gray-900">Products</p>
-                        <ul class="space-y-2 mt-2.5 text-sm">
-                            <li><a href="crm_inventory.html"
-                                    class="hover:opacity-75 text-gray-700 transition">CRM &amp;
-                                    Inventory</a>
-                            </li>
-                            <li><a href="petrol.html" class="hover:opacity-75 text-gray-700 transition">Petrol
-                                    Pump</a></li>
-                            <li><a href="job_portal.html" class="hover:opacity-75 text-gray-700 transition">Job
-                                    Portal</a></li>
-                            <li><a href="gst_billing_pos" class="hover:opacity-75 text-gray-700 transition">GST
-                                    Billing POS</a></li>
-                            <li><a href="invoice_generator.html"
-                                    class="hover:opacity-75 text-gray-700 transition">Easy Invoice
-                                    Generator</a>
-                            </li>
-                            <li><a href="pharmax.html" class="hover:opacity-75 text-gray-700 transition">Pharma
-                                    X</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-span-2 sm:col-span-1">
-                        <p class="font-medium text-gray-900">About Us</p>
-                        <ul class="space-y-2 mt-2.5 text-sm">
-                            <li><a href="index.html" class="hover:opacity-75 text-gray-700 transition">Home</a>
-                            </li>
-                            <li><a href="about.html" class="hover:opacity-75 text-gray-700 transition">About
-                                    Us</a></li>
-                            <li><a href="clients.html"
-                                    class="hover:opacity-75 text-gray-700 transition">Clients</a>
-                            </li>
-
-                            <li><a href="contact.html" class="hover:opacity-75 text-gray-700 transition">Contact
-                                    Us</a></li>
-                        </ul>
-                    </div>
-
-                    <ul class="flex justify-start lg:justify-end gap-6 col-span-2 lg:col-span-5">
-                        <li>
-                            <a href="#" rel="noreferrer" target="_blank"
-                                class="hover:opacity-75 text-gray-700 transition">
-                                <span class="sr-only">Facebook</span>
-
-                                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd"
-                                        d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" rel="noreferrer" target="_blank"
-                                class="hover:opacity-75 text-gray-700 transition">
-                                <span class="sr-only">Instagram</span>
-
-                                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd"
-                                        d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" rel="noreferrer" target="_blank"
-                                class="hover:opacity-75 text-gray-700 transition">
-                                <span class="sr-only">Twitter</span>
-
-                                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path
-                                        d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                                </svg>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" rel="noreferrer" target="_blank"
-                                class="hover:opacity-75 text-gray-700 transition">
-                                <span class="sr-only">GitHub</span>
-
-                                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd"
-                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" rel="noreferrer" target="_blank"
-                                class="hover:opacity-75 text-gray-700 transition">
-                                <span class="sr-only">Dribbble</span>
-
-                                <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd"
-                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
+              <div class="max-w-md bg-black relative aspect-square w-full">
+                <img
+                  src="https://d1u4v6449fgzem.cloudfront.net/2020/03/What-Does-Hosting-Look-Like-at-Different-Traffic-Levels-1.png"
+                  class="h-full w-full object-cover"
+                />
+                <div class="inset-0 absolute flex items-center justify-center">
+                  <div
+                    class="text-4xl font-bold tracking-wider text-white text-center"
+                  >
+                    <span>°Hosting & Domain registration </span>
+                  </div>
                 </div>
+              </div>
+
+              <div class="mt-8 leading-relaxed text-neutral-500">
+                <p class="max-w-md text-xl leading-6 md:text-sm">
+                  We offer reliable hosting and domain registration services to
+                  establish your online presence. . For businesses needing to
+                  track assets or manage logistics, we provide GPS tracking
+                  devices and implementation support.
+                </p>
+              </div>
             </div>
 
-            <div class="mt-8 pt-8 border-gray-100 border-t">
-                <div class="flex justify-between">
-                    <aside class="">
-                        <p class="text-gray-500 text-xs">&copy; 2025 Vibrant IT Solutions
-                            Pvt. Ltd. All rights
-                            reserved.</p>
-                    </aside>
+            <!-- Right Column -->
+            <div class="flex flex-col">
+              <h1
+                class="mb-9 text-5xl font-light text-neutral-900 md:mt-12 md:mb-16"
+              >
+                IT-Enabled Services <br />
+                & Hardware
+              </h1>
 
-                    <ul class="flex flex-wrap justify-start lg:justify-end gap-4 mt-8 sm:mt-0 text-xs">
-                        <li>
-                            <a href="#" class="hover:opacity-75 text-gray-500 transition"> Terms &
-                                Conditions
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="hover:opacity-75 text-gray-500 transition"> Privacy
-                                Policy
-                            </a>
-                        </li>
+              <nav class="mt-0 space-y-6 md:mt-8">
+                <a
+                  href="#"
+                  class="border-neutral-200 py-3 relative block border-b"
+                >
+                  <span class="leading-6 font-normal tracking-wider"
+                    >Hosting & Domain registration
+                  </span>
+                </a>
 
-                        <li>
-                            <a href="#" class="hover:opacity-75 text-gray-500 transition"> Cookies
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <a href="#" class="border-neutral-200 py-3 block border-b">
+                  <span class="leading-6 font-normal tracking-wider"
+                    >Bulk SMS Services
+                  </span>
+                </a>
+
+                <a href="#" class="border-neutral-200 py-3 block border-b">
+                  <span class="leading-6 font-normal tracking-wider"
+                    >GPS Tracking Device</span
+                  >
+                </a>
+
+                <a href="#" class="border-neutral-200 py-3 block border-b">
+                  <span class="leading-6 font-normal tracking-wider"
+                    >Biometric Attendance Device
+                  </span>
+                </a>
+              </nav>
             </div>
-        </div>
-    </footer>
+          </div>
+
+          <div class="gap-5 px-4 py-8 md:grid-cols-3 md:px-8 grid grid-cols-1">
+            <div class="max-w-md space-y-1">
+              <img
+                src="https://lh3.googleusercontent.com/p/AF1QipPPl_yNeckMoRywUgjwkEH2Fbjl3V4NH6aFrnZb=s680-w680-h510"
+                alt=""
+                class="object-cover"
+              />
+              <div class="text-2xl leading-10 font-normal tracking-wider">
+                Parle Sugar
+              </div>
+              <div class="">Tourism</div>
+            </div>
+            <div class="">
+              <img
+                src="../src/assets/ourServices/LHSF.png"
+                alt=""
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div class="">
+              <img
+                src="https://content.jdmagicbox.com/comp/lucknow/x1/0522px522.x522.161201154419.n6x1/catalogue/gitanjali-jewels-aashiyana-lucknow-jewellery-showrooms-3upb10w.jpg"
+                alt=""
+                class="h-full w-full object-contain"
+              />
+            </div>
+          </div>
+        </main>
+
+        <!--service3-->
+        <main class="bg-white mx-auto">
+          <div
+            class="gap-8 px-4 py-8 md:grid-cols-2 md:px-8 md:py-20 grid grid-cols-1"
+          >
+            <!-- Left Column -->
+            <div class="flex flex-col justify-between">
+              <div class="text-normal mb-4 font-light text-black">(03)</div>
+
+              <div class="max-w-md bg-black relative aspect-square w-full">
+                <img
+                  src="https://d1u4v6449fgzem.cloudfront.net/2020/03/What-Does-Hosting-Look-Like-at-Different-Traffic-Levels-1.png"
+                  class="h-full w-full object-cover"
+                />
+                <div class="inset-0 absolute flex items-center justify-center">
+                  <div
+                    class="text-4xl font-bold tracking-wider text-white text-center"
+                  >
+                    <span>°IVRS and Q-SMS </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8 leading-relaxed text-neutral-500">
+                <p class="max-w-md text-xl leading-6 md:text-sm">
+                  We offer reliable hosting and domain registration services to
+                  establish your online presence. . For businesses needing to
+                  track assets or manage logistics, we provide GPS tracking
+                  devices and implementation support.
+                </p>
+              </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="flex flex-col">
+              <h1
+                class="mb-9 text-5xl font-light text-neutral-900 md:mt-12 md:mb-16"
+              >
+                Specialized Solutions
+              </h1>
+
+              <nav class="mt-0 space-y-6 md:mt-8">
+                <a
+                  href="#"
+                  class="border-neutral-200 py-3 relative block border-b"
+                >
+                  <span class="leading-6 font-normal tracking-wider"
+                    >Food and Beverage (ZUFOOD)
+                  </span>
+                </a>
+
+                <a href="#" class="border-neutral-200 py-3 block border-b">
+                  <span class="leading-6 font-normal tracking-wider"
+                    >Rapid Authoring Tools
+                  </span>
+                </a>
+
+                <a href="#" class="border-neutral-200 py-3 block border-b">
+                  <span class="leading-6 font-normal tracking-wider"
+                    >IVRS and Q-SMS</span
+                  >
+                </a>
+              </nav>
+            </div>
+          </div>
+
+          <div class="gap-5 px-4 py-8 md:grid-cols-3 md:px-8 grid grid-cols-1">
+            <div class="max-w-md space-y-1">
+              <img
+                src="https://lh3.googleusercontent.com/p/AF1QipPPl_yNeckMoRywUgjwkEH2Fbjl3V4NH6aFrnZb=s680-w680-h510"
+                alt=""
+                class="object-cover"
+              />
+              <div class="text-2xl leading-10 font-normal tracking-wider">
+                Parle Sugar
+              </div>
+              <div class="">Tourism</div>
+            </div>
+            <div class="">
+              <img
+                src="../src/assets/ourServices/LHSF.png"
+                alt=""
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div class="">
+              <img
+                src="https://content.jdmagicbox.com/comp/lucknow/x1/0522px522.x522.161201154419.n6x1/catalogue/gitanjali-jewels-aashiyana-lucknow-jewellery-showrooms-3upb10w.jpg"
+                alt=""
+                class="h-full w-full object-contain"
+              />
+            </div>
+          </div>
+        </main>
+
+        <!-- Our Achievements-->
+        <section class="bg-black py-16">
+          <div class="fifthPage-js max-w-screen-xl px-4 md:px-8 mx-auto">
+            <h2 class="text-lg font-light text-[#3b82f6]">Our Achievements</h2>
+            <p
+              class="tracking-3 clientHightlight mt-3 max-w-3xl text-4xl leading-10 text-gray-700 md:text-2xl font-[300]"
+            >
+              We champion the bold ideas and brave steps our partners have taken
+              with us, from startups to enterprises. We’re proud of the
+              connections we’ve made along the way
+            </p>
+            <div class="md:mt-18">
+              <dl
+                class="statsContainer mt-6 gap-4 lg:gap-[8rem] md:mt-8 mx-auto flex items-center justify-center"
+              >
+                <div class="max-w-xs px-4 py-4 md:py-8 flex flex-col text-left">
+                  <div class="flex items-center justify-center">
+                    <!-- <img class="size-14 shrink-0" src="../src/assets/images/staff.png" alt="Avatar"> -->
+                  </div>
+                  <dt
+                    class="leading-6 font-normal text-gray-500 md:max-w-3/4 md:text-[15px] order-last text-[20px]"
+                  >
+                    Successfully completed more than 420+ projects.
+                  </dt>
+                  <dd
+                    class="text-7xl font-normal text-white md:text-8xl text-nowrap"
+                  >
+                    <span id="projectsCompleted">0</span
+                    ><span class="text-blue-600">+</span>
+                  </dd>
+                </div>
+                <div class="max-w-xs px-4 md:py-8 flex flex-col text-left">
+                  <div class="flex items-center justify-center">
+                    <!-- <img class="size-14 shrink-0" src="../src/assets/images/staff.png" alt="Avatar"> -->
+                  </div>
+                  <dt
+                    class="leading-6 font-normal text-gray-500 md:max-w-3/4 md:text-[15px] order-last text-[20px]"
+                  >
+                    Passionate Designers and Management Teams
+                  </dt>
+                  <dd class="text-7xl font-normal text-white md:text-8xl">
+                    <span id="employeeCount">0</span>
+                    <span class="text-blue-600">+</span>
+                  </dd>
+                </div>
+                <div
+                  class="max-w-xs gap-2 px-4 md:py-8 flex flex-col text-left"
+                >
+                  <div class="flex items-center justify-center">
+                    <!-- <img class="size-14 shrink-0" src="../src/assets/images/staff.png" alt="Avatar"> -->
+                  </div>
+                  <dt
+                    class="leading-6 font-normal text-gray-500 md:max-w-3/4 md:text-[15px] order-last text-[20px]"
+                  >
+                    With 12+ years of experience, Vibrant IT Solutions delivers
+                    results.
+                  </dt>
+                  <dd class="text-7xl font-normal text-white md:text-8xl">
+                    <span id="experienceYears">0</span>
+                    <span class="text-blue-600">+</span>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="sixthPage-js bg-white relative overflow-hidden">
+          <div
+            class="max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16 mx-auto h-screen"
+          >
+            <h2
+              class="text-5xl tracking-tight text-black md:text-8xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center font-[300]"
+            >
+              What they say about Vibrant IT Solutions
+            </h2>
+
+            <div
+              class="relative flex h-[200vh] flex-col items-center justify-center"
+            >
+              <div class="testimonials-container relative w-full">
+                <blockquote
+                  class="md:left-0% testimonial max-w-xs border-gray-950/[.1] bg-gray-50 p-6 shadow-lg hover:shadow-xl md:top-[70%] absolute border"
+                >
+                  <p class="text-gray-700">
+                    "Vibrant IT Solutions helped us take our business online
+                    with a sleek, user-friendly website and a powerful mobile
+                    app. Their team understood our needs and delivered beyond
+                    expectations. Highly recommended!"
+                  </p>
+                  <div class="mt-6 gap-4 flex items-center">
+                    <img
+                      alt="Reviewer"
+                      src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                      class="size-8 rounded-full object-cover"
+                    />
+                    <div>
+                      <p class="mt-0.5 text-lg font-medium text-gray-900">
+                        — Rajesh Verma, CEO, NextGen Retail
+                      </p>
+                    </div>
+                  </div>
+                </blockquote>
+                <blockquote
+                  class="testimonial max-w-xs border-gray-950/[.1] bg-gray-50 p-6 shadow-lg hover:shadow-xl md:left-[68%] absolute left-[0] border"
+                >
+                  <p class="text-gray-700">
+                    "We needed a custom enterprise solution for our growing
+                    operations, and Vibrant IT Solutions delivered a flawless
+                    application that scales effortlessly. Their attention to
+                    detail and support is top-notch!"
+                  </p>
+                  <div class="mt-6 gap-4 flex items-center">
+                    <img
+                      alt="Reviewer"
+                      src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                      class="size-8 rounded-full object-cover"
+                    />
+                    <div>
+                      <p class="mt-0.5 text-lg font-medium text-gray-900">
+                        — Sarah Thompson, CTO, TechWave Solutions
+                      </p>
+                    </div>
+                  </div>
+                </blockquote>
+                <blockquote
+                  class="testimonial max-w-xs border-gray-950/[.1] bg-gray-50 p-6 shadow-lg hover:shadow-xl absolute top-[75%] left-[7%] border"
+                >
+                  <p class="text-gray-700">
+                    "Our startup needed a dynamic app within a short timeline,
+                    and Vibrant IT Solutions made it happen! Their team worked
+                    efficiently, keeping us updated at every stage. The result?
+                    A stunning app that our users love!"
+                  </p>
+                  <div class="mt-6 gap-4 flex items-center">
+                    <img
+                      alt="Reviewer"
+                      src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                      class="size-8 rounded-full object-cover"
+                    />
+                    <div>
+                      <p class="mt-0.5 text-lg font-medium text-gray-900">
+                        — Amit Sharma, Founder, FitTrack App
+                      </p>
+                    </div>
+                  </div>
+                </blockquote>
+                <blockquote
+                  class="testimonial max-w-xs border-gray-950/[.1] bg-gray-50 p-6 shadow-lg hover:shadow-xl md:left-[50%] absolute top-[75%] left-[0] border"
+                >
+                  <p class="text-gray-700">
+                    "From UI/UX design to backend development, the Vibrant IT
+                    team has been an invaluable partner in our digital
+                    transformation journey. Their innovative approach and quick
+                    turnaround have boosted our productivity!"
+                  </p>
+                  <div class="mt-6 gap-4 flex items-center">
+                    <img
+                      alt="Reviewer"
+                      src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                      class="size-8 rounded-full object-cover"
+                    />
+                    <div>
+                      <p class="mt-0.5 text-lg font-medium text-gray-900">
+                        — Vikram Joshi, COO, FinTechPro
+                      </p>
+                    </div>
+                  </div>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--footer page-->
+        <footer class="rounded-3xl bg-gray-100">
+          <div class="max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 mx-auto">
+            <div class="lg:flex lg:items-start lg:gap-8">
+              <a href="/" class="w-[12rem]">
+                <img
+                  src="../src/assets/images/logo.png"
+                  alt="logo"
+                  class="w-full"
+                />
+              </a>
+
+              <div
+                class="mt-8 gap-8 lg:mt-0 lg:grid-cols-4 lg:gap-y-16 grid grid-cols-2"
+              >
+                <div class="col-span-2">
+                  <div>
+                    <h2 class="text-2xl font-bold text-gray-900">
+                      Chat With Us!
+                    </h2>
+
+                    <p class="mt-4 text-gray-500">
+                      Need help with your IT project? Chat with us today and
+                      let’s bring your ideas to life!
+                    </p>
+                  </div>
+                </div>
+
+                <div class="lg:col-span-3 lg:flex lg:items-end col-span-2">
+                  <form
+                    class="ms-auto"
+                    action="mailto:someone@example.com"
+                    method="post"
+                    enctype="text/plain"
+                  >
+                    <div
+                      class="max-w-lg space-y-4 p-2 sm:flex sm:items-center sm:gap-4 md:space-y-0 relative justify-between"
+                    >
+                      <svg
+                        class="top-4 left-3 h-6 w-6 text-gray-800 md:inset-y-0 absolute my-auto"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="{1.5}"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                        />
+                      </svg>
+                      <input
+                        type="email"
+                        required
+                        placeholder="Enter your email"
+                        class="rounded-lg bg-white py-2 pr-3 pl-12 text-gray-500 shadow-sm focus:border-indigo-600 w-full border outline-none"
+                      />
+                      <button
+                        class="mt-1 gap-2 rounded-lg bg-blue-500 px-6 py-3 text-sm font-bold tracking-wide text-white hover:bg-blue-600 sm:mt-0 sm:w-auto sm:shrink-0 flex w-full items-center justify-center uppercase transition-none"
+                      >
+                        Sent
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="lucide lucide-send"
+                        >
+                          <path
+                            d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"
+                          />
+                          <path d="m21.854 2.147-10.94 10.939" />
+                        </svg>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="sm:col-span-1 col-span-2">
+                  <p class="font-medium text-gray-900">Services</p>
+                  <ul class="mt-2.5 space-y-2 text-sm">
+                    <li>
+                      <a
+                        href="software_dovelopment.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >Software Development</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="web_application.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >Web Applications Development</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="website_dovelopment.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >Web Design &amp; Development</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="hosting.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >Hosting &amp; Domain registration</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="bulk_sms.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >Bulk Sms Services</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="gps_tracking.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >GPS Tracking Device</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="bio-metric.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >Biometric Attendance Device</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="real_state.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >Real Estate CRM</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="school_management.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >School Management System(ERP)</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="sm:col-span-1 col-span-2">
+                  <p class="font-medium text-gray-900">Company</p>
+                  <ul class="mt-2.5 space-y-2 text-sm">
+                    <li>
+                      <a
+                        href="hrms.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >HRMS</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="erp.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >School ERP</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="school_android.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >School ERP Android</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="pos.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >Point Of Sale</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="pos_touch_enabled.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >POS Touch Enabled</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="web_based_sales.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >Web Based Sale</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="sm:col-span-1 col-span-2">
+                  <p class="font-medium text-gray-900">Products</p>
+                  <ul class="mt-2.5 space-y-2 text-sm">
+                    <li>
+                      <a
+                        href="crm_inventory.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >CRM &amp; Inventory</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="petrol.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >Petrol Pump</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="job_portal.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >Job Portal</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="gst_billing_pos"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >GST Billing POS</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="invoice_generator.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >Easy Invoice Generator</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="pharmax.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >Pharma X</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="sm:col-span-1 col-span-2">
+                  <p class="font-medium text-gray-900">About Us</p>
+                  <ul class="mt-2.5 space-y-2 text-sm">
+                    <li>
+                      <a
+                        href="index.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >Home</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="about.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >About Us</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="clients.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >Clients</a
+                      >
+                    </li>
+
+                    <li>
+                      <a
+                        href="contact.html"
+                        class="text-gray-700 transition hover:opacity-75"
+                        >Contact Us</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <ul
+                  class="gap-6 lg:col-span-5 lg:justify-end col-span-2 flex justify-start"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      rel="noreferrer"
+                      target="_blank"
+                      class="text-gray-700 transition hover:opacity-75"
+                    >
+                      <span class="sr-only">Facebook</span>
+
+                      <svg
+                        class="size-6"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="#"
+                      rel="noreferrer"
+                      target="_blank"
+                      class="text-gray-700 transition hover:opacity-75"
+                    >
+                      <span class="sr-only">Instagram</span>
+
+                      <svg
+                        class="size-6"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="#"
+                      rel="noreferrer"
+                      target="_blank"
+                      class="text-gray-700 transition hover:opacity-75"
+                    >
+                      <span class="sr-only">Twitter</span>
+
+                      <svg
+                        class="size-6"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="#"
+                      rel="noreferrer"
+                      target="_blank"
+                      class="text-gray-700 transition hover:opacity-75"
+                    >
+                      <span class="sr-only">GitHub</span>
+
+                      <svg
+                        class="size-6"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="#"
+                      rel="noreferrer"
+                      target="_blank"
+                      class="text-gray-700 transition hover:opacity-75"
+                    >
+                      <span class="sr-only">Dribbble</span>
+
+                      <svg
+                        class="size-6"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-8 border-gray-100 pt-8 border-t">
+              <div class="flex justify-between">
+                <aside class="">
+                  <p class="text-xs text-gray-500">
+                    &copy; 2025 Vibrant IT Solutions Pvt. Ltd. All rights
+                    reserved.
+                  </p>
+                </aside>
+
+                <ul
+                  class="mt-8 gap-4 text-xs sm:mt-0 lg:justify-end flex flex-wrap justify-start"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      class="text-gray-500 transition hover:opacity-75"
+                    >
+                      Terms & Conditions
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-gray-500 transition hover:opacity-75"
+                    >
+                      Privacy Policy
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="#"
+                      class="text-gray-500 transition hover:opacity-75"
+                    >
+                      Cookies
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-    <script src="app.js"></script>
-</body>
+    <script src="../src/js/locomotiveScroll.js"></script>
 
+    <script type="module" src="../src/js/servicePage.js"></script>
+  </body>
 </html>
