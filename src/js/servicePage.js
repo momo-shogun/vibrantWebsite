@@ -3,7 +3,10 @@ import {
   initTestimonialsAnimation,
   initStatsAnimation,
 } from "./gsapAnimation.js";
-import { initServiceAnimation } from "./serviceGsapAnimation.js";
+import {
+  initServiceAnimation1,
+  initServiceAnimation2,
+} from "./serviceGsapAnimation.js";
 
 function puzzelTransition() {
   const images = document.querySelectorAll("#puzzel-container img");
@@ -37,5 +40,6 @@ gsap.to("#a", {
 document.addEventListener("DOMContentLoaded", () => {
   initTestimonialsAnimation();
   initStatsAnimation();
-  initServiceAnimation("serviceHightlight");
+  initServiceAnimation1();
+  initServiceAnimation2();
 });

@@ -105,7 +105,6 @@ export function initStatsAnimation() {
         start: "top 90%",
         end: "top 90",
         ease: "power2.out",
-        markers: true,
       },
     });
 
@@ -393,7 +392,6 @@ export function initClientAnimation() {
     .map((char) => `<span>${char}</span>`)
     .join("");
 
-
   // Get the spans
   const spans = wrapperText.querySelectorAll(".clientHightlight span");
 
@@ -431,13 +429,11 @@ export function initClientAnimation() {
     { opacity: 0, y: 30 },
     { opacity: 1, y: 0, duration: 2 },
   );
-  tlCompanies
-    .fromTo(
-      ".companyLogo4",
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 2 },
-    )
-
+  tlCompanies.fromTo(
+    ".companyLogo4",
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0, duration: 2 },
+  );
 }
 
 // ✅ Testimonials Animation
