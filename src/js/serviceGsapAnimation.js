@@ -23,7 +23,7 @@ export function initServiceAnimation(serviceClass) {
       .timeline({
         scrollTrigger: {
           trigger: `.${serviceClass}`,
-          scroller: ".scroll-container",
+
           start: "top 90%",
           end: "+=120%",
           scrub: 0.3,
@@ -82,7 +82,7 @@ export function initServiceAnimation(serviceClass) {
       .timeline({
         scrollTrigger: {
           trigger: `.${serviceClass}`,
-          scroller: ".scroll-container",
+
           start: "top 90%",
           end: "0%",
           scrub: 0.3,
@@ -154,7 +154,7 @@ export function initAcheivementsAnimation() {
       .timeline({
         scrollTrigger: {
           trigger: ".acheivements-js",
-          scroller: ".scroll-container",
+
           start: "top 90%",
           end: "+=120%",
           scrub: 0.3,
@@ -172,7 +172,7 @@ export function initAcheivementsAnimation() {
     const tlStats = gsap.timeline({
       scrollTrigger: {
         trigger: ".statsContainer",
-        scroller: ".scroll-container",
+
         start: "top 90%",
         end: "+=120%",
         ease: "power2.out",
@@ -209,7 +209,7 @@ export function initAcheivementsAnimation() {
       .timeline({
         scrollTrigger: {
           trigger: ".acheivements-js",
-          scroller: ".scroll-container",
+
           start: "top 90%",
           end: "0%",
           scrub: 0.3,
@@ -226,7 +226,7 @@ export function initAcheivementsAnimation() {
     const tlStats = gsap.timeline({
       scrollTrigger: {
         trigger: ".statsContainer",
-        scroller: ".scroll-container",
+
         start: "top 90%",
         end: "+=120%",
         ease: "power2.out",

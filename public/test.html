@@ -1,37 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Cube with Tailwind & GSAP</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-</head>
-<body class="flex justify-center items-center bg-gray-100 h-screen">
+<!doctype html>
+<html>
+  <head>
+    <title>Lenis Smooth Scrolling</title>
+    <style>
+        
+    </style>
+    <link rel="stylesheet" href="../src/css/output.css" />
+  </head>
+  <body>
+    <div class="content">
+      <section class="bg-gray-50">
+        <div
+          class="max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center mx-auto"
+        >
+          <div class="max-w-xl mx-auto text-center">
+            <h1 class="text-3xl font-extrabold sm:text-5xl">
+              Understand User Flow.
+              <strong class="font-extrabold text-red-700 sm:block">
+                Increase Conversion.
+              </strong>
+            </h1>
 
-<div class="cube-container">
-    <div id="cube" class="cube">
-        <div class="face front bg-[url('https://images.unsplash.com/photo-1726137569846-7977371633a9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8')]"></div>
-        <div class="face back bg-[url('https://plus.unsplash.com/premium_photo-1679691282737-bc3dac4499a3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyfHx8ZW58MHx8fHx8')]"></div>
-        <div class="face left bg-[url('https://images.unsplash.com/photo-1741087562365-d0bf6e6fd7ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8')]"></div>
-        <div class="face right bg-[url('https://plus.unsplash.com/premium_photo-1675756234999-3a6538ec1cde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8')]"></div>
-        <div class="face top bg-[url('https://images.unsplash.com/photo-1737467042207-7fc6318d3e5b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5fHx8ZW58MHx8fHx8')]"></div>
-        <div class="face bottom bg-[url('https://images.unsplash.com/photo-1740214845705-04a20e2e22c1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxM3x8fGVufDB8fHx8fA%3D%3D')]"></div>
+            <p class="mt-4 sm:text-xl/relaxed">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt
+              illo tenetur fuga ducimus numquam ea!
+            </p>
+
+            <div class="mt-8 gap-4 flex flex-wrap justify-center">
+              <a
+                class="rounded-sm bg-red-600 px-12 py-3 text-sm font-medium text-white shadow-sm hover:bg-red-700 sm:w-auto block w-full focus:ring-3 focus:outline-hidden"
+                href="#"
+              >
+                Get Started
+              </a>
+
+              <a
+                class="rounded-sm px-12 py-3 text-sm font-medium text-red-600 shadow-sm hover:text-red-700 sm:w-auto block w-full focus:ring-3 focus:outline-hidden"
+                href="#"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <article
+        class="rounded-lg shadow-sm hover:shadow-lg overflow-hidden transition"
+      >
+        <img
+          alt=""
+          src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+          class="h-56 w-full object-cover"
+        />
+
+        <div class="bg-white p-4 sm:p-6">
+          <time datetime="2022-10-10" class="text-xs text-gray-500 block">
+            10th Oct 2022
+          </time>
+
+          <a href="#">
+            <h3 class="mt-0.5 text-lg text-gray-900">
+              How to position your furniture for positivity
+            </h3>
+          </a>
+
+          <p class="mt-2 text-sm/relaxed text-gray-500 line-clamp-3">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
+            dolores, possimus pariatur animi temporibus nesciunt praesentium
+            dolore sed nulla ipsum eveniet corporis quidem, mollitia itaque
+            minus soluta, voluptates neque explicabo tempora nisi culpa eius
+            atque dignissimos. Molestias explicabo corporis voluptatem?
+          </p>
+        </div>
+      </article>
+      p>
+            This is some extra content that will make the page scrollable.
+        </p>
+        <p>
+            This is some extra content that will make the page scrollable.
+        </p>
+        <p>
+            This is some extra content that will make the page scrollable.
+        </p>
+        <p>
+            This is some extra content that will make the page scrollable.
+        </p>
+        <p>
+            This is some extra content that will make the page scrollable.
+        </p>
+        <p>
+            This is some extra content that will make the page scrollable.
+        </p>
+        <p>
+            This is some extra content that will make the page scrollable.
+        </p>
+        <p>
+            This is some extra content that will make the page scrollable.
+        </p>
+        <p>
+            This is some extra content that will make the page scrollable.
+        </p>
+        <p>
+            This is some extra content that will make the page scrollable.
+        </p>
+        <p>
+            This is some extra content that will make the page scrollable.
+        </p>
+        <p>
+            This is some extra content that will make the page scrollable.
+        </p>
     </div>
-</div>
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        gsap.timeline({ repeat: -1, defaults: { duration: 2, ease: "expo.inOut" } })
-            .to("#cube", { rotateY: 90, delay: 1 })
-            .to("#cube", { rotateY: 180, delay: 1 })
-            .to("#cube", { rotateY: 270, delay: 1 })
-            .to("#cube", { rotateX: 90, delay: 1 })
-            .to("#cube", { rotateX: -90, delay: 1 })
-            .to("#cube", { rotateX: 0, rotateY: 0, delay: 1 });
-    });
-</script>
-
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1/dist/lenis.min.js"></script>
+    <script>
+      
+    </script>
+  </body>
 </html>
