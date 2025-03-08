@@ -43,14 +43,6 @@ function toggleMenu() {
 // document.querySelector("#a").style.background = b1;
 // document.querySelector("#a").style.backgroundSize = "300% 300%"; // Larger background area for smooth movement
 
-gsap.to("#a", {
-  backgroundPosition: "40% 23%", // Moves the gradient
-  duration: 100,
-  ease: "linear",
-  repeat: -1,
-  yoyo: true,
-});
-
 //gsap animation
 
 document.addEventListener("DOMContentLoaded", () => {
