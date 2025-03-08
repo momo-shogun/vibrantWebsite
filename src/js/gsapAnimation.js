@@ -138,17 +138,16 @@ export function initStatsAnimation() {
     const tlClientMobile = gsap.timeline({
       scrollTrigger: {
         trigger: ".client-js",
-
         scrub: true,
         start: "top 90%",
-        end: "bottom 80%",
+        end: "+=120%",
       },
     });
 
     tlClientMobile.fromTo(
       ".statsHeading-js",
-      { opacity: 0.2, y: 20 },
-      { opacity: 1, y: 0 },
+      { opacity: 0, y: 100 },
+      { opacity: 1, y: 0, duration: 1.5 },
     );
 
     const tlStatsMobile = gsap.timeline({
@@ -297,10 +296,9 @@ export function initProcessAnimation() {
     const tlProcess = gsap.timeline({
       scrollTrigger: {
         trigger: ".forthPage-js",
-
-        scrub: 2,
-        start: "-50%",
-        end: "+=110%",
+        scrub: 2.75,
+        start: "-40%",
+        end: "+=105%",
       },
     });
     tlProcess.fromTo(
@@ -401,7 +399,7 @@ export function initClientAnimation() {
 
         start: "top 90%",
         end: "0%",
-        scrub: 0.7,
+        scrub: 2.7,
       },
     })
     .set(
@@ -444,7 +442,6 @@ export function initTestimonialsAnimation() {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".sixthPage-js",
-
         start: "top top",
         end: "+=250%",
         scrub: 2,

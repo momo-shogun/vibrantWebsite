@@ -3,20 +3,11 @@ import {
   initServiceAnimation,
   initAcheivementsAnimation,
 } from "./serviceGsapAnimation.js";
-
-function puzzelTransition() {
-  const images = document.querySelectorAll("#puzzel-container img");
-
-  const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
-
-  tl.to(images[0], { y: "-100%", duration: 1, ease: "power2.inOut", delay: 1 })
-    .to(images[1], { y: "-100%", duration: 1, ease: "power2.inOut", delay: 1 })
-    .set(images[0], { y: "100%" }) // Reset first image below
-    .set(images[1], { y: "0%" }) // Bring second image to visible area
-    .to(images[0], { y: "0%", duration: 1, ease: "power2.inOut", delay: 1 })
-    .to(images[1], { y: "100%", duration: 1, ease: "power2.inOut", delay: 1 });
-}
-
+import {
+  service1Images,
+  service2Images,
+  service3Images,
+} from "./serviceImgConstants.js";
 //menu
 function toggleMenu() {
   var menu = document.getElementById("mobile-menu");
@@ -35,8 +26,8 @@ gsap.to("#a", {
 
 document.addEventListener("DOMContentLoaded", () => {
   initTestimonialsAnimation();
-  initServiceAnimation("service1-js");
-  initServiceAnimation("service2-js");
-  initServiceAnimation("service3-js");
+  initServiceAnimation("service1-js", service1Images);
+  initServiceAnimation("service2-js", service2Images);
+  initServiceAnimation("service3-js", service3Images);
   initAcheivementsAnimation();
 });

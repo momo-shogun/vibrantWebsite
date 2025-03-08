@@ -1,5 +1,5 @@
 // ✅ Our Service1 Page Animation
-export function initServiceAnimation(serviceClass) {
+export function initServiceAnimation(serviceClass, serviceImgArr) {
   const mm = gsap.matchMedia();
 
   // Remove previous spans if they exist
@@ -23,7 +23,6 @@ export function initServiceAnimation(serviceClass) {
       .timeline({
         scrollTrigger: {
           trigger: `.${serviceClass}`,
-
           start: "top 90%",
           end: "+=120%",
           scrub: 0.3,
@@ -69,11 +68,11 @@ export function initServiceAnimation(serviceClass) {
       { opacity: 1, y: 0, duration: 1.5 },
       "<80%",
     );
-    hoverAnimation(`.${serviceClass} .serviceName1`);
-    hoverAnimation(`.${serviceClass} .serviceName2`);
-    hoverAnimation(`.${serviceClass} .serviceName3`);
-    hoverAnimation(`.${serviceClass} .serviceName4`);
-    hoverAnimation(`.${serviceClass} .serviceName5`);
+    hoverAnimation(`.${serviceClass} .serviceName1`, serviceImgArr);
+    hoverAnimation(`.${serviceClass} .serviceName2`, serviceImgArr);
+    hoverAnimation(`.${serviceClass} .serviceName3`, serviceImgArr);
+    hoverAnimation(`.${serviceClass} .serviceName4`, serviceImgArr);
+    hoverAnimation(`.${serviceClass} .serviceName5`, serviceImgArr);
   });
 
   mm.add("(max-width: 1024px)", () => {
@@ -154,10 +153,9 @@ export function initAcheivementsAnimation() {
       .timeline({
         scrollTrigger: {
           trigger: ".acheivements-js",
-
           start: "top 90%",
           end: "+=120%",
-          scrub: 0.3,
+          scrub: 2.75,
         },
       })
       .set(
@@ -172,7 +170,6 @@ export function initAcheivementsAnimation() {
     const tlStats = gsap.timeline({
       scrollTrigger: {
         trigger: ".statsContainer",
-
         start: "top 90%",
         end: "+=120%",
         ease: "power2.out",
@@ -209,10 +206,9 @@ export function initAcheivementsAnimation() {
       .timeline({
         scrollTrigger: {
           trigger: ".acheivements-js",
-
           start: "top 90%",
           end: "0%",
-          scrub: 0.3,
+          scrub: 2.76,
         },
       })
       .set(
@@ -226,7 +222,6 @@ export function initAcheivementsAnimation() {
     const tlStats = gsap.timeline({
       scrollTrigger: {
         trigger: ".statsContainer",
-
         start: "top 90%",
         end: "+=120%",
         ease: "power2.out",
@@ -258,8 +253,9 @@ export function initAcheivementsAnimation() {
   });
 }
 
-function hoverAnimation(serviceClass) {
+function hoverAnimation(serviceClass, serviceImgArr) {
   const serviceElement = document.querySelector(serviceClass);
+  let showcaseImgElement;
 
   if (serviceElement) {
     // Set initial gradient background with Tailwind compatibility
@@ -271,12 +267,39 @@ function hoverAnimation(serviceClass) {
       overflow: "hidden", // Prevent content shift
     });
 
+    const className = serviceElement.classList[2];
+
+    // Get the showcase image container
+    if (className === "serviceName1") {
+      showcaseImgElement = document.querySelector(
+        ".showcaseContainer1-js .showcaseImg-js",
+      );
+    } else if (className === "serviceName2") {
+      showcaseImgElement = document.querySelector(
+        ".showcaseContainer2-js .showcaseImg-js",
+      );
+    } else if (className === "serviceName3") {
+      showcaseImgElement = document.querySelector(
+        ".showcaseContainer3-js .showcaseImg-js",
+      );
+    }
+
     serviceElement.addEventListener("mouseenter", () => {
-      gsap.to(serviceElement, {
+      const tlService = gsap.timeline();
+      tlService.to(serviceElement, {
         backgroundSize: "100% 100%", // Smooth bottom-up animation
-        duration: 0.6,
+        duration: 0.3,
         ease: "power2.out",
-        padding: "10px", // Smooth padding animation
+        padding: "13px", // Smooth padding animation
+      });
+
+      tlService.to(showcaseImgElement, {
+        opacity: 0,
+        duration: 0.3,
+        onComplete: function () {
+          showcaseImgElement.src = serviceImgArr[className];
+          gsap.to(showcaseImgElement, { opacity: 1, duration: 0.3 });
+        },
       });
     });
 
