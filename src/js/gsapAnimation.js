@@ -84,7 +84,7 @@ export function initStatsAnimation() {
     const tlClient = gsap.timeline({
       scrollTrigger: {
         trigger: ".client-js",
-        scroller: ".scroll-container",
+
         scrub: 2,
         start: "start 80%",
         end: "top 40%",
@@ -101,7 +101,6 @@ export function initStatsAnimation() {
     const tlStats = gsap.timeline({
       scrollTrigger: {
         trigger: ".statsContainer",
-        scroller: ".scroll-container",
         start: "top 90%",
         end: "top 90",
         ease: "power2.out",
@@ -139,7 +138,7 @@ export function initStatsAnimation() {
     const tlClientMobile = gsap.timeline({
       scrollTrigger: {
         trigger: ".client-js",
-        scroller: ".scroll-container",
+
         scrub: true,
         start: "top 90%",
         end: "bottom 80%",
@@ -155,7 +154,7 @@ export function initStatsAnimation() {
     const tlStatsMobile = gsap.timeline({
       scrollTrigger: {
         trigger: ".statsContainer",
-        scroller: ".scroll-container",
+
         start: "top 95%",
         end: "top 80%",
         ease: "power2.out",
@@ -198,7 +197,7 @@ export function initFeaturesAnimation() {
       scrollTrigger: {
         trigger: ".thirdPage-js",
         scrub: 2,
-        scroller: ".scroll-container",
+
         start: "-50%",
         end: "50%",
       },
@@ -244,7 +243,7 @@ export function initFeaturesAnimation() {
       scrollTrigger: {
         trigger: ".thirdPage-js",
         scrub: "true",
-        scroller: ".scroll-container",
+
         start: "-30%",
         end: "80%",
       },
@@ -298,7 +297,7 @@ export function initProcessAnimation() {
     const tlProcess = gsap.timeline({
       scrollTrigger: {
         trigger: ".forthPage-js",
-        scroller: ".scroll-container",
+
         scrub: 2,
         start: "-50%",
         end: "+=110%",
@@ -342,7 +341,7 @@ export function initProcessAnimation() {
     const tlProcess = gsap.timeline({
       scrollTrigger: {
         trigger: ".forthPage-js",
-        scroller: ".scroll-container",
+
         scrub: 2,
         start: "top 80%",
         end: "bottom 80%",
@@ -399,7 +398,7 @@ export function initClientAnimation() {
     .timeline({
       scrollTrigger: {
         trigger: ".fifthPage-js",
-        scroller: ".scroll-container",
+
         start: "top 90%",
         end: "0%",
         scrub: 0.7,
@@ -445,7 +444,7 @@ export function initTestimonialsAnimation() {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".sixthPage-js",
-        scroller: ".scroll-container",
+
         start: "top top",
         end: "+=250%",
         scrub: 2,
@@ -471,7 +470,7 @@ export function initTestimonialsAnimation() {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".sixthPage-js",
-        scroller: ".scroll-container",
+
         start: "top top",
         end: "+=250%",
         scrub: 2,
