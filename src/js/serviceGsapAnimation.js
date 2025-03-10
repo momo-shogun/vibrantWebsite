@@ -254,6 +254,25 @@ export function initAcheivementsAnimation() {
 }
 
 export function initHeroTitleAnimation() {
+  //moving the graphics
+  const laptop = document.querySelector(".statImg");
+  document.addEventListener("mousemove", (event) => {
+    gsap.to(laptop, {
+      x: -(window.innerWidth / 2 - event.clientX) * 0.03, // Mouse-driven movement
+      y: -(window.innerHeight / 2 - event.clientY) * 0.03,
+      duration: 1.5,
+      ease: "power4.out",
+    });
+  });
+  gsap.to(laptop, {
+    x: 5,
+    y: 5,
+    duration: 1,
+    repeat: -1,
+    yoyo: true,
+    ease: "linear",
+  });
+
   const tlLand = gsap.timeline({
     defaults: { duration: 1.75, ease: "power1.out" },
   });
