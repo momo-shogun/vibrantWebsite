@@ -68,11 +68,11 @@ export function initServiceAnimation(serviceClass, serviceImgArr) {
       { opacity: 1, y: 0, duration: 1.5 },
       "<80%",
     );
-    hoverAnimation(`.${serviceClass} .serviceName1`, serviceImgArr);
-    hoverAnimation(`.${serviceClass} .serviceName2`, serviceImgArr);
-    hoverAnimation(`.${serviceClass} .serviceName3`, serviceImgArr);
-    hoverAnimation(`.${serviceClass} .serviceName4`, serviceImgArr);
-    hoverAnimation(`.${serviceClass} .serviceName5`, serviceImgArr);
+    hoverAnimation(`.${serviceClass}`, serviceImgArr);
+    // hoverAnimation(`.${serviceClass} .serviceName2`, serviceImgArr);
+    // hoverAnimation(`.${serviceClass} .serviceName3`, serviceImgArr);
+    // hoverAnimation(`.${serviceClass} .serviceName4`, serviceImgArr);
+    // hoverAnimation(`.${serviceClass} .serviceName5`, serviceImgArr);
   });
 
   mm.add("(max-width: 1024px)", () => {
@@ -253,65 +253,150 @@ export function initAcheivementsAnimation() {
   });
 }
 
+// function hoverAnimation(serviceClass, serviceImgArr) {
+//   // const serviceElement = document.querySelector(serviceClass);
+//   console.log("Looking for:", serviceClass);
+//   const serviceElement = document.querySelectorAll(serviceClass);
+//   console.log("Service Element found?", serviceElement);
+//   let showcaseImgElement;
+
+//   if (serviceElement) {
+//     // Set initial gradient background with Tailwind compatibility
+//     gsap.set(serviceElement, {
+//       backgroundImage:
+//         "linear-gradient(to bottom, white 90%, transparent 100%)",
+//       backgroundSize: "100% 0%", // Start hidden from bottom
+//       backgroundRepeat: "no-repeat",
+//       overflow: "hidden", // Prevent content shift
+//     });
+
+//     const className = serviceElement.classList[2];
+//     console.log(className);
+
+//     // Get the showcase image container
+//     if (className === "serviceName1") {
+//       showcaseImgElement = document.querySelector(
+//         ".showcaseContainer1-js .showcaseImg-js",
+//       );
+//     } else if (className === "serviceName2") {
+//       showcaseImgElement = document.querySelector(
+//         ".showcaseContainer2-js .showcaseImg-js",
+//       );
+//     } else if (className === "serviceName3") {
+//       showcaseImgElement = document.querySelector(
+//         ".showcaseContainer3-js .showcaseImg-js",
+//       );
+//     }
+
+//     serviceElement.addEventListener("mouseenter", () => {
+//       const tlService = gsap.timeline();
+//       tlService.to(serviceElement, {
+//         backgroundSize: "100% 100%", // Smooth bottom-up animation
+//         duration: 0.3,
+//         ease: "power2.out",
+//         padding: "13px", // Smooth padding animation
+//       });
+
+//       tlService.to(showcaseImgElement, {
+//         opacity: 0,
+//         duration: 0.3,
+//         onComplete: function () {
+//           showcaseImgElement.src = serviceImgArr[className];
+//           gsap.to(showcaseImgElement, { opacity: 1, duration: 0.3 });
+//         },
+//       });
+//     });
+
+//     serviceElement.addEventListener("mouseleave", () => {
+//       gsap.to(serviceElement, {
+//         backgroundSize: "100% 0%", // Revert animation
+//         duration: 0.6,
+//         ease: "power2.out",
+//         padding: "12px 0px",
+//       });
+//     });
+//   } else {
+//     console.error(`Element with class ${serviceClass} not found`);
+//   }
+// }
 function hoverAnimation(serviceClass, serviceImgArr) {
-  const serviceElement = document.querySelector(serviceClass);
-  let showcaseImgElement;
+  console.log(`Searching for elements inside: ${serviceClass}`);
 
-  if (serviceElement) {
-    // Set initial gradient background with Tailwind compatibility
-    gsap.set(serviceElement, {
-      backgroundImage:
-        "linear-gradient(to bottom, white 90%, transparent 100%)",
-      backgroundSize: "100% 0%", // Start hidden from bottom
-      backgroundRepeat: "no-repeat",
-      overflow: "hidden", // Prevent content shift
-    });
+  const serviceContainers = document.querySelectorAll(serviceClass);
 
-    const className = serviceElement.classList[2];
+  if (serviceContainers.length === 0) {
+    console.error(`❌ No elements found for selector: ${serviceClass}`);
+    return;
+  }
+
+  serviceContainers.forEach((container) => {
+    // Now we search for `.serviceName1`, `.serviceName2`, etc., inside each service container
+    const serviceElements = container.querySelectorAll(
+      "[class*='serviceName']",
+    );
+
+    console.log(
+      `🔍 Found ${serviceElements.length} elements inside ${serviceClass}:`,
+      serviceElements,
+    );
 
     // Get the showcase image container
-    if (className === "serviceName1") {
+    let showcaseImgElement;
+    if (serviceClass === ".service1-js") {
       showcaseImgElement = document.querySelector(
         ".showcaseContainer1-js .showcaseImg-js",
       );
-    } else if (className === "serviceName2") {
+    } else if (serviceClass === ".service2-js") {
       showcaseImgElement = document.querySelector(
         ".showcaseContainer2-js .showcaseImg-js",
       );
-    } else if (className === "serviceName3") {
+    } else if (serviceClass === ".service3-js") {
       showcaseImgElement = document.querySelector(
         ".showcaseContainer3-js .showcaseImg-js",
       );
     }
+    console.log(showcaseImgElement);
 
-    serviceElement.addEventListener("mouseenter", () => {
-      const tlService = gsap.timeline();
-      tlService.to(serviceElement, {
-        backgroundSize: "100% 100%", // Smooth bottom-up animation
-        duration: 0.3,
-        ease: "power2.out",
-        padding: "13px", // Smooth padding animation
+    serviceElements.forEach((serviceElement) => {
+      serviceElement.addEventListener("mouseenter", () => {
+        console.log("🔥 Hovering over:", serviceElement.classList);
+
+        gsap.to(serviceElement, {
+          backgroundSize: "100% 100%",
+          duration: 0.3,
+          ease: "power2.out",
+          padding: "13px",
+        });
+
+        // Find the correct image container dynamically
+        // const showcaseImgElement = container.querySelector(".showcaseImg-js");
+        if (showcaseImgElement) {
+          console.log("✅ Updating image for", serviceElement.classList[2]);
+          gsap.to(showcaseImgElement, {
+            opacity: 0,
+            duration: 0.3,
+            onComplete: function () {
+              showcaseImgElement.src =
+                serviceImgArr[serviceElement.classList[2]];
+              gsap.to(showcaseImgElement, { opacity: 1, duration: 0.3 });
+            },
+          });
+        } else {
+          console.error(
+            "❌ No showcase image found inside",
+            showcaseImgElement,
+          );
+        }
       });
 
-      tlService.to(showcaseImgElement, {
-        opacity: 0,
-        duration: 0.3,
-        onComplete: function () {
-          showcaseImgElement.src = serviceImgArr[className];
-          gsap.to(showcaseImgElement, { opacity: 1, duration: 0.3 });
-        },
+      serviceElement.addEventListener("mouseleave", () => {
+        gsap.to(serviceElement, {
+          backgroundSize: "100% 0%",
+          duration: 0.6,
+          ease: "power2.out",
+          padding: "12px 0px",
+        });
       });
     });
-
-    serviceElement.addEventListener("mouseleave", () => {
-      gsap.to(serviceElement, {
-        backgroundSize: "100% 0%", // Revert animation
-        duration: 0.6,
-        ease: "power2.out",
-        padding: "12px 0px",
-      });
-    });
-  } else {
-    console.error(`Element with class ${serviceClass} not found`);
-  }
+  });
 }
