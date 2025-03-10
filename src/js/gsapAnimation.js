@@ -7,8 +7,20 @@ export function initHeroAnimation() {
   });
 
   tlLand
-    .fromTo(".heroTitle-js", { opacity: 0, y: 30 }, { opacity: 1, y: 0 })
-    .fromTo(".heroImage-js", { opacity: 0, x: -50 }, { opacity: 1, x: 0 }, "<");
+    .from(".heroTitle-js", {
+      rotationX: -100,
+      transformOrigin: "50% 50% -40px",
+      opacity: 0,
+      duration: 0.8,
+      ease: "power3",
+      stagger: 0.25,
+    })
+    .fromTo(
+      ".heroImage-js",
+      { opacity: 0, x: -50 },
+      { opacity: 1, x: 0 },
+      "<20%",
+    );
 
   const brandRedSpan = document.querySelector(".heroTitle-js");
 

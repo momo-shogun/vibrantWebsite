@@ -2,6 +2,7 @@ import { initTestimonialsAnimation } from "./gsapAnimation.js";
 import {
   initServiceAnimation,
   initAcheivementsAnimation,
+  initHeroTitleAnimation,
 } from "./serviceGsapAnimation.js";
 import {
   service1Images,
@@ -30,4 +31,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initServiceAnimation("service2-js", service2Images);
   initServiceAnimation("service3-js", service3Images);
   initAcheivementsAnimation();
+  initHeroTitleAnimation();
 });
