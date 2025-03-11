@@ -61,3 +61,30 @@ document.querySelectorAll(".pricing-option").forEach((option) => {
     option.classList.toggle("active");
   });
 });
+
+function contactUsAnimation() {
+  const mm = gsap.matchMedia();
+
+  mm.add("(min-width: 1025px)", () => {
+    // Desktop animation
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".heroContainer-js",
+        start: "top top",
+        pin: true,
+      },
+    });
+  });
+  mm.add("(max-width: 1024px)", () => {
+    // Mobile & Tablet animation
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".heroContainer-js",
+        pin: false,
+      },
+    });
+  });
+}
+document.addEventListener("DOMContentLoaded", () => {
+  contactUsAnimation();
+});
