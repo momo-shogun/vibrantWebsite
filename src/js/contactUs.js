@@ -85,6 +85,34 @@ function contactUsAnimation() {
     });
   });
 }
+
+export function initHeroTitleAnimation() {
+  const tlLand = gsap.timeline({
+    defaults: { duration: 1.75, ease: "power1.out" },
+  });
+
+  tlLand.from(".heroTitle-js", {
+    rotationX: -100,
+    transformOrigin: "50% 50% -70px",
+    opacity: 0,
+    duration: 0.8,
+    ease: "power3",
+    stagger: 0.25,
+  });
+  tlLand.from(
+    ".heroPara-js",
+    {
+      y: 20,
+      opacity: 0,
+      duration: 0.97,
+      ease: "power3",
+      stagger: 0.25,
+    },
+    "<50%",
+  );
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   contactUsAnimation();
+  initHeroTitleAnimation();
 });

@@ -9,19 +9,6 @@ import {
   service2Images,
   service3Images,
 } from "./serviceImgConstants.js";
-//menu
-function toggleMenu() {
-  var menu = document.getElementById("mobile-menu");
-  menu.classList.toggle("hidden");
-}
-
-gsap.to("#a", {
-  backgroundPosition: "40% 23%", // Moves the gradient
-  duration: 100,
-  ease: "linear",
-  repeat: -1,
-  yoyo: true,
-});
 
 //gsap animation
 
