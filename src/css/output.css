@@ -7,8 +7,6 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-orange-500: oklch(0.705 0.213 47.604);
-    --color-teal-500: oklch(0.704 0.14 182.503);
-    --color-teal-600: oklch(0.6 0.118 184.704);
     --color-teal-800: oklch(0.437 0.078 188.216);
     --color-blue-500: oklch(0.623 0.214 259.815);
     --color-blue-600: oklch(0.546 0.245 262.881);
@@ -502,9 +500,6 @@
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
-  .h-8 {
-    height: calc(var(--spacing) * 8);
-  }
   .h-12 {
     height: calc(var(--spacing) * 12);
   }
@@ -907,9 +902,6 @@
   .bg-gray-200 {
     background-color: var(--color-gray-200);
   }
-  .bg-teal-600 {
-    background-color: var(--color-teal-600);
-  }
   .bg-white {
     background-color: var(--color-white);
   }
@@ -1241,9 +1233,6 @@
   .text-slate-900 {
     color: var(--color-slate-900);
   }
-  .text-teal-600 {
-    color: var(--color-teal-600);
-  }
   .text-transparent {
     color: transparent;
   }
@@ -1394,13 +1383,6 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-blue-600);
-      }
-    }
-  }
-  .hover\:bg-teal-500 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-teal-500);
       }
     }
   }
@@ -1579,6 +1561,11 @@
   .sm\:shrink-0 {
     @media (width >= 40rem) {
       flex-shrink: 0;
+    }
+  }
+  .sm\:grid-cols-2 {
+    @media (width >= 40rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
   .sm\:items-center {
@@ -2089,6 +2076,11 @@
       padding-block: calc(var(--spacing) * 16);
     }
   }
+  .lg\:pt-16 {
+    @media (width >= 64rem) {
+      padding-top: calc(var(--spacing) * 16);
+    }
+  }
   .lg\:pt-24 {
     @media (width >= 64rem) {
       padding-top: calc(var(--spacing) * 24);
@@ -2120,6 +2112,11 @@
     @media (width >= 64rem) {
       font-size: var(--text-7xl);
       line-height: var(--tw-leading, var(--text-7xl--line-height));
+    }
+  }
+  .dark\:border-gray-800 {
+    @media (prefers-color-scheme: dark) {
+      border-color: var(--color-gray-800);
     }
   }
   .\[\&\>\*\]\:px-12 {
