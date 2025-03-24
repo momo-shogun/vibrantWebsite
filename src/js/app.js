@@ -31,18 +31,6 @@ $(document).ready(function () {
   });
 });
 
-//menu
-function toggleMenu() {
-  var menu = document.getElementById("mobile-menu");
-  menu.classList.toggle("hidden");
-}
-
-//gradient
-// const b1 = "background: #8ED5FB; background: radial-gradient(at left top, #8ED5FB, #EF69FE);";
-
-// document.querySelector("#a").style.background = b1;
-// document.querySelector("#a").style.backgroundSize = "300% 300%"; // Larger background area for smooth movement
-
 //gsap animation
 
 document.addEventListener("DOMContentLoaded", () => {
