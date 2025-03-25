@@ -1,4 +1,8 @@
-import { initClientAnimation } from "./serviceGsapAnimation.js";
+import { initTestimonialsAnimation } from "./gsapAnimation.js";
+import {
+  initAcheivementsAnimation,
+  initClientAnimation,
+} from "./serviceGsapAnimation.js";
 import { ElementAnimator } from "./utils.js";
 
 function heroTitleAnimation() {
@@ -38,6 +42,8 @@ function heroTitleAnimation() {
 document.addEventListener("DOMContentLoaded", () => {
   heroTitleAnimation();
   initClientAnimation();
+  initAcheivementsAnimation();
+  initTestimonialsAnimation();
   //animation for hero section
   const alienImage = document.getElementById("alien-image");
   const c1Image = document.getElementById("c1-image");
