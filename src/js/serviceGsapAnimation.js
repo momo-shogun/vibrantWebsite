@@ -578,6 +578,7 @@ function hoverAnimation(serviceClass, serviceImgArr) {
 export function initClientAnimation() {
   // Remove previous spans if they exist
   const wrapperText = document.querySelector(".clientHightlight");
+  const companyLogos = document.querySelectorAll("[class*='companyLogo']");
 
   wrapperText.innerHTML = wrapperText.textContent
     .split("")
@@ -599,30 +600,47 @@ export function initClientAnimation() {
     .set(
       spans,
       {
-        color: "#eee",
+        color: "oklch(0.646 0.222 41.116)",
         stagger: 0.1,
       },
       0.1,
     );
+  tlCompanies.fromTo(
+    companyLogos,
+    {
+      opacity: 0,
+      y: 30,
+      scale: 0.9, // Optional: add a slight scale effect
+    },
+    {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 1.5, // Reduced duration for smoother animation
+      stagger: 0.2, // Stagger the animation between logos
+      ease: "power2.out", // Smooth easing
+    },
+  );
+  // Optional: Add hover effect for company logos
+  companyLogos.forEach((logo) => {
+    logo.addEventListener("mouseenter", () => {
+      gsap.to(logo, {
+        scale: 1.05,
+        duration: 0.4,
+        color: "#eee",
+        backgroundColor: "#000",
+        ease: "power1.out",
+      });
+    });
 
-  tlCompanies.fromTo(
-    ".companyLogo1",
-    { opacity: 0, y: 30 },
-    { opacity: 1, y: 0, duration: 2 },
-  );
-  tlCompanies.fromTo(
-    ".companyLogo2",
-    { opacity: 0, y: 30 },
-    { opacity: 1, y: 0, duration: 2 },
-  );
-  tlCompanies.fromTo(
-    ".companyLogo3",
-    { opacity: 0, y: 30 },
-    { opacity: 1, y: 0, duration: 2 },
-  );
-  tlCompanies.fromTo(
-    ".companyLogo4",
-    { opacity: 0, y: 30 },
-    { opacity: 1, y: 0, duration: 2 },
-  );
+    logo.addEventListener("mouseleave", () => {
+      gsap.to(logo, {
+        scale: 1,
+        duration: 0.7,
+        color: "#000",
+        backgroundColor: "#eee",
+        ease: "power1.out",
+      });
+    });
+  });
 }
