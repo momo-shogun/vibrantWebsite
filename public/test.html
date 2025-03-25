@@ -1,575 +1,142 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!--  CSS -->
-  <link rel="stylesheet" href="./../src/css/output.css" />
-  <!-- Owl Carousel CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-    rel="stylesheet" />
-  <!-- jQuery (Required for Owl Carousel) -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <!-- Owl Carousel JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <!--lenis scroll-->
-  <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/lenis@1.2.3/dist/lenis.css" />
-
-  <title>Vibrant It Solutions Pvt Ltd</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Solutions Consulting</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="h-full font-[Open_Sans]">
-  <div class=" ">
-    <div class="content">
-      <div class="inset-0 blur-xl absolute h-[580px]" style="
-            background: linear-gradient(
-              143.6deg,
-              rgba(149, 167, 247, 0.171) 20.79%,
-              rgba(255, 202, 152, 0.411) 90.92%,
-              rgba(215, 176, 255, 0.288) 40.35%
-            );
-          "></div>
-    </div>
-
-    <main class="">
-      <div class="relative">
-        <header class="text-white relative bg-[#1a1a1a]">
-          <div class="px-4 h-16 container mx-auto flex items-center justify-between">
-            <!-- Logo -->
-            <div class="flex items-center">
-              <a class="text-white  flex justify-center items-center" href="./index.html">
-                <div class="size-12 text-2xl">
-                  <img src="../src/assets/images/logoOnly.png" alt="logo" class="h-full w-full object-cover" />
-                </div>
-                <div class="leading-tight mt-[-2px] text-lg ml-2">
-                  <span class="font-bold">Vibrant</span>
-                  <br />
-                  IT Solutions
-                </div>
-              </a>
-            </div>
-
-            <!-- Primary Navigation -->
-            <nav class="lg:flex hidden">
-              <ul class="space-x-1 flex">
-                <li>
-                  <button id="what-we-do-btn" class="px-4 py-2 hover:text-gray-300 flex items-center"
-                    onclick="toggleMenu('what-we-do')">
-                    What we do
-                    <i data-lucide="chevron-down" class="ml-1 h-4 w-4 transition-transform"></i>
-                  </button>
-                </li>
-                <li>
-                  <button id="who-we-are-btn" class="px-4 py-2 hover:text-gray-300 flex items-center"
-                    onclick="toggleMenu('who-we-are')">
-                    Who we are
-                    <i data-lucide="chevron-down" class="ml-1 h-4 w-4 transition-transform"></i>
-                  </button>
-                </li>
-                <li>
-                  <button id="insights-btn" class="px-4 py-2 hover:text-gray-300 flex items-center"
-                    onclick="toggleMenu('insights')">
-                    Insights
-                    <i data-lucide="chevron-down" class="ml-1 h-4 w-4 transition-transform"></i>
-                  </button>
-                </li>
-                <li>
-                  <button id="careers-btn" class="px-4 py-2 hover:text-gray-300 flex items-center"
-                    onclick="toggleMenu('careers')">
-                    Careers
-                    <i data-lucide="chevron-down" class="ml-1 h-4 w-4 transition-transform"></i>
-                  </button>
-                </li>
-                <li>
-                  <button id="blogs-btn" class="px-4 py-2 hover:text-gray-300 flex items-center"
-                    onclick="toggleMenu('blogs')">
-                    Blogs
-                    <i data-lucide="chevron-down" class="ml-1 h-4 w-4 transition-transform"></i>
-                  </button>
-                </li>
-              </ul>
-            </nav>
-
-            <!-- <div class="md:flex hidden">
-              <a class="group relative inline-block focus:ring-3 focus:outline-hidden" href="contact-us.html">
-                <span
-                  class="inset-0 translate-x-1.5 translate-y-1.5 group-hover:translate-x-0 group-hover:translate-y-0 absolute bg-gradient-to-t from-[#d3977f] to-[#f7704b] transition-transform"></span>
-
-                <span
-                  class="px-4 py-2 text-sm  tracking-widest text-white md:px-8 md:py-3 relative inline-block border-2 border-[#9B3922] uppercase">
-                  Contact Us
-                </span>
-              </a>
-            </div> -->
-
-
-
-            <!-- for Mobile Devices -->
-            <div class="md:hidden">
-              <button class="text-gray-500 hover:text-gray-800" onclick="toggleMenu()">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="1.5">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-              </button>
-            </div>
-          </div>
+<body class="bg-gray-50 text-gray-800">
+  <div class="container mx-auto px-4">
+    <!-- Hero Section -->
+    <header class="py-20 text-center" id="hero">
+      <h1 class="text-5xl font-bold mb-6 text-blue-600 opacity-0" id="heroTitle">
+        Tech Solutions Consulting
+      </h1>
+      <div class="max-w-3xl mx-auto text-xl mb-10 opacity-0" id="heroSubtitle">
+        A leading IT consultation and technology solutions provider dedicated to transforming businesses through
+        innovative software and application development.
       </div>
+      <button class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition duration-300 opacity-0"
+        id="heroButton">
+        Get Started
+      </button>
+    </header>
 
-      <!-- Mega Menu -->
-      <div id="what-we-do-menu"
-        class="bg-[#121212] text-white absolute top-16 left-0 w-full border-t border-gray-800 shadow-xl z-50 hidden">
-        <div class="container mx-auto py-8 px-4">
-          <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
-            <div class="col-span-1">
-              <nav>
-                <ul class="space-y-2">
-                  <li>
-                    <a href="/overview"
-                      class="flex items-center justify-between py-2 px-3 hover:bg-gray-800 rounded-md group">
-                      <span class="font-medium">Overview</span>
-                      <i data-lucide="chevron-right"
-                        class="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/industries"
-                      class="flex items-center justify-between py-2 px-3 hover:bg-gray-800 rounded-md group">
-                      <span class="font-medium">Industries</span>
-                      <i data-lucide="chevron-right"
-                        class="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/services"
-                      class="flex items-center justify-between py-2 px-3 hover:bg-gray-800 rounded-md group">
-                      <span class="font-medium">Services</span>
-                      <i data-lucide="chevron-right"
-                        class="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/products"
-                      class="flex items-center justify-between py-2 px-3 hover:bg-gray-800 rounded-md group">
-                      <span class="font-medium">Products and Platforms</span>
-                      <i data-lucide="chevron-right"
-                        class="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/research"
-                      class="flex items-center justify-between py-2 px-3 hover:bg-gray-800 rounded-md group">
-                      <span class="font-medium">Research & Innovation</span>
-                      <i data-lucide="chevron-right"
-                        class="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div class="col-span-4 md:pl-8 border-l border-gray-800">
-              <div class="max-w-2xl">
-                <h2 class="text-2xl font-bold mb-4">
-                  Vibrant IT is here to make a difference through technology.
-                </h2>
-                <p class="text-gray-400 mb-6">
-                  Leading the way in innovation for over 15 years, we build greater futures for businesses
-                  across multiple industries and 25 countries.
-                </p>
-                <a href="/solutions"
-                  class="inline-block border border-white rounded-full px-6 py-2 hover:bg-white hover:text-black transition-colors">
-                  Discover all solutions
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="who-we-are-menu"
-        class="bg-[#121212] text-white absolute top-16 left-0 w-full border-t border-gray-800 shadow-xl z-50 hidden">
-        <div class="container mx-auto py-8 px-4">
-          <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
-            <div class="col-span-1">
-              <nav>
-                <ul class="space-y-2">
-                  <li>
-                    <a href="/about"
-                      class="flex items-center justify-between py-2 px-3 hover:bg-gray-800 rounded-md group">
-                      <span class="font-medium">About Us</span>
-                      <i data-lucide="chevron-right"
-                        class="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/leadership"
-                      class="flex items-center justify-between py-2 px-3 hover:bg-gray-800 rounded-md group">
-                      <span class="font-medium">Leadership</span>
-                      <i data-lucide="chevron-right"
-                        class="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/partners"
-                      class="flex items-center justify-between py-2 px-3 hover:bg-gray-800 rounded-md group">
-                      <span class="font-medium">Partners</span>
-                      <i data-lucide="chevron-right"
-                        class="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/sustainability"
-                      class="flex items-center justify-between py-2 px-3 hover:bg-gray-800 rounded-md group">
-                      <span class="font-medium">Sustainability</span>
-                      <i data-lucide="chevron-right"
-                        class="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div class="col-span-4 md:pl-8 border-l border-gray-800">
-              <div class="max-w-2xl">
-                <h2 class="text-2xl font-bold mb-4">
-                  Our mission is to help businesses transform through technology
-                </h2>
-                <p class="text-gray-400 mb-6">
-                  With a team of dedicated experts and innovative solutions, we're committed to driving digital
-                  transformation for our clients.
-                </p>
-                <a href="/about"
-                  class="inline-block border border-white rounded-full px-6 py-2 hover:bg-white hover:text-black transition-colors">
-                  Learn more about us
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="insights-menu"
-        class="bg-[#121212] text-white absolute top-16 left-0 w-full border-t border-gray-800 shadow-xl z-50 hidden">
-        <div class="container mx-auto py-8 px-4">
-          <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
-            <div class="col-span-1">
-              <nav>
-                <ul class="space-y-2">
-                  <li>
-                    <a href="/case-studies"
-                      class="flex items-center justify-between py-2 px-3 hover:bg-gray-800 rounded-md group">
-                      <span class="font-medium">Case Studies</span>
-                      <i data-lucide="chevron-right"
-                        class="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/white-papers"
-                      class="flex items-center justify-between py-2 px-3 hover:bg-gray-800 rounded-md group">
-                      <span class="font-medium">White Papers</span>
-                      <i data-lucide="chevron-right"
-                        class="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/reports"
-                      class="flex items-center justify-between py-2 px-3 hover:bg-gray-800 rounded-md group">
-                      <span class="font-medium">Reports</span>
-                      <i data-lucide="chevron-right"
-                        class="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/webinars"
-                      class="flex items-center justify-between py-2 px-3 hover:bg-gray-800 rounded-md group">
-                      <span class="font-medium">Webinars</span>
-                      <i data-lucide="chevron-right"
-                        class="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div class="col-span-4 md:pl-8 border-l border-gray-800">
-              <div class="max-w-2xl">
-                <h2 class="text-2xl font-bold mb-4">Discover our latest insights and thought leadership</h2>
-                <p class="text-gray-400 mb-6">
-                  Stay ahead of the curve with our latest research, reports, and industry insights.
-                </p>
-                <a href="/insights"
-                  class="inline-block border border-white rounded-full px-6 py-2 hover:bg-white hover:text-black transition-colors">
-                  View all insights
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="careers-menu"
-        class="bg-[#121212] text-white absolute top-16 left-0 w-full border-t border-gray-800 shadow-xl z-50 hidden">
-        <div class="container mx-auto py-8 px-4">
-          <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
-            <div class="col-span-1">
-              <nav>
-                <ul class="space-y-2">
-                  <li>
-                    <a href="/job-openings"
-                      class="flex items-center justify-between py-2 px-3 hover:bg-gray-800 rounded-md group">
-                      <span class="font-medium">Job Openings</span>
-                      <i data-lucide="chevron-right"
-                        class="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/life-at-vibrant"
-                      class="flex items-center justify-between py-2 px-3 hover:bg-gray-800 rounded-md group">
-                      <span class="font-medium">Life at Vibrant</span>
-                      <i data-lucide="chevron-right"
-                        class="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/benefits"
-                      class="flex items-center justify-between py-2 px-3 hover:bg-gray-800 rounded-md group">
-                      <span class="font-medium">Benefits</span>
-                      <i data-lucide="chevron-right"
-                        class="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/learning"
-                      class="flex items-center justify-between py-2 px-3 hover:bg-gray-800 rounded-md group">
-                      <span class="font-medium">Learning & Development</span>
-                      <i data-lucide="chevron-right"
-                        class="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div class="col-span-4 md:pl-8 border-l border-gray-800">
-              <div class="max-w-2xl">
-                <h2 class="text-2xl font-bold mb-4">Join our team of innovators</h2>
-                <p class="text-gray-400 mb-6">
-                  Discover exciting career opportunities and grow with a company that values innovation,
-                  diversity, and professional development.
-                </p>
-                <a href="/careers"
-                  class="inline-block border border-white rounded-full px-6 py-2 hover:bg-white hover:text-black transition-colors">
-                  Explore careers
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="blogs-menu"
-        class="bg-[#121212] text-white absolute top-16 left-0 w-full border-t border-gray-800 shadow-xl z-50 hidden">
-        <div class="container mx-auto py-8 px-4">
-          <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
-            <div class="col-span-1">
-              <nav>
-                <ul class="space-y-2">
-                  <li>
-                    <a href="/technology"
-                      class="flex items-center justify-between py-2 px-3 hover:bg-gray-800 rounded-md group">
-                      <span class="font-medium">Technology</span>
-                      <i data-lucide="chevron-right"
-                        class="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/innovation"
-                      class="flex items-center justify-between py-2 px-3 hover:bg-gray-800 rounded-md group">
-                      <span class="font-medium">Innovation</span>
-                      <i data-lucide="chevron-right"
-                        class="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/digital-transformation"
-                      class="flex items-center justify-between py-2 px-3 hover:bg-gray-800 rounded-md group">
-                      <span class="font-medium">Digital Transformation</span>
-                      <i data-lucide="chevron-right"
-                        class="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/industry-insights"
-                      class="flex items-center justify-between py-2 px-3 hover:bg-gray-800 rounded-md group">
-                      <span class="font-medium">Industry Insights</span>
-                      <i data-lucide="chevron-right"
-                        class="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div class="col-span-4 md:pl-8 border-l border-gray-800">
-              <div class="max-w-2xl">
-                <h2 class="text-2xl font-bold mb-4">Read our latest blog posts</h2>
-                <p class="text-gray-400 mb-6">
-                  Explore our collection of articles on technology trends, industry insights, and digital
-                  transformation strategies.
-                </p>
-                <a href="/blogs"
-                  class="inline-block border border-white rounded-full px-6 py-2 hover:bg-white hover:text-black transition-colors">
-                  View all blogs
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </header>
-
-      <section class="py-24 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-          <h2
-            class="text-blue-600 font-medium uppercase tracking-wider mb-6 inline-block px-4 py-1 bg-blue-50 rounded-full">
-            Our Trusted Clients</h2>
-          <div class="max-w-4xl mx-auto">
-            <h3 class="text-3xl md:text-4xl font-bold leading-tight text-gray-900">
-              Since 2021, we have partnered with these companies to create positive impact for the future.
-              <span class="block mt-3 text-blue-600">Will your logo be next here?</span>
-            </h3>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div
-            class="bg-white rounded-xl p-8 flex items-center justify-center h-48 shadow-sm client-card border border-gray-100">
-            <img src="/placeholder.svg?height=80&width=150" alt="EPiGRA logo" class="max-h-16 w-auto object-contain" />
-            <span class="absolute bottom-4 text-sm font-medium text-gray-600">EPiGRA</span>
-          </div>
-
-          <div
-            class="bg-white rounded-xl p-8 flex items-center justify-center h-48 shadow-sm client-card border border-gray-100">
-            <img src="/placeholder.svg?height=80&width=150" alt="SAHLAH logo" class="max-h-16 w-auto object-contain" />
-            <span class="absolute bottom-4 text-sm font-medium text-gray-600">SAHLAH</span>
-          </div>
-
-          <div
-            class="bg-white rounded-xl p-8 flex items-center justify-center h-48 shadow-sm client-card border border-gray-100">
-            <img src="/placeholder.svg?height=80&width=150" alt="Lucidblack logo"
-              class="max-h-16 w-auto object-contain" />
-            <span class="absolute bottom-4 text-sm font-medium text-gray-600">Lucidblack</span>
-          </div>
-
-          <div
-            class="bg-white rounded-xl p-8 flex items-center justify-center h-48 shadow-sm client-card border border-gray-100">
-            <img src="/placeholder.svg?height=80&width=150" alt="Blomer logo" class="max-h-16 w-auto object-contain" />
-            <span class="absolute bottom-4 text-sm font-medium text-gray-600">Blomer</span>
-          </div>
-
-          <div
-            class="bg-white rounded-xl p-8 flex items-center justify-center h-48 shadow-sm client-card border border-gray-100 relative">
-            <img src="/placeholder.svg?height=80&width=150" alt="Client logo"
-              class="max-h-16 w-auto object-contain opacity-50" />
-            <div class="absolute inset-0 flex items-center justify-center">
-              <span class="text-lg font-medium text-blue-600">Your Logo Here</span>
-            </div>
-          </div>
-
-          <div
-            class="bg-white rounded-xl p-8 flex items-center justify-center h-48 shadow-sm client-card border border-gray-100 relative">
-            <img src="/placeholder.svg?height=80&width=150" alt="Client logo"
-              class="max-h-16 w-auto object-contain opacity-50" />
-            <div class="absolute inset-0 flex items-center justify-center">
-              <span class="text-lg font-medium text-blue-600">Your Logo Here</span>
-            </div>
-          </div>
-
-          <div
-            class="bg-white rounded-xl p-8 flex items-center justify-center h-48 shadow-sm client-card border border-gray-100 relative">
-            <img src="/placeholder.svg?height=80&width=150" alt="Client logo"
-              class="max-h-16 w-auto object-contain opacity-50" />
-            <div class="absolute inset-0 flex items-center justify-center">
-              <span class="text-lg font-medium text-blue-600">Your Logo Here</span>
-            </div>
-          </div>
-
-          <div
-            class="bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl p-8 flex flex-col items-center justify-center h-48 shadow-sm client-card text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-3" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+    <!-- Sections Container -->
+    <div class="grid md:grid-cols-2 gap-12 my-16">
+      <!-- Who We Are -->
+      <section class="bg-white p-8 rounded-lg shadow-md transform transition hover:scale-105" id="whoWeAre">
+        <h2 class="text-3xl font-semibold mb-6 text-blue-600">Who We Are</h2>
+        <ul class="space-y-4">
+          <li class="flex items-center">
+            <svg class="w-6 h-6 mr-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            <span class="text-lg font-medium">Become a Partner</span>
-            <span class="text-sm mt-1 text-blue-100">Contact us today</span>
-          </div>
-        </div>
+            A team of experienced technology professionals
+          </li>
+          <li class="flex items-center">
+            <svg class="w-6 h-6 mr-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            Experts in custom software and application development
+          </li>
+          <li class="flex items-center">
+            <svg class="w-6 h-6 mr-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            Committed to delivering cutting-edge technological solutions
+          </li>
+        </ul>
+      </section>
 
-        <div class="mt-16 text-center">
-          <a href="#"
-            class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-colors duration-200">
-            Partner With Us
-          </a>
+      <!-- Key Strengths -->
+      <section class="bg-white p-8 rounded-lg shadow-md transform transition hover:scale-105" id="keyStrengths">
+        <h2 class="text-3xl font-semibold mb-6 text-blue-600">Key Strengths</h2>
+        <div class="space-y-4">
+          <div class="bg-blue-50 p-4 rounded-lg">
+            <h3 class="font-bold text-blue-700">Technical Expertise</h3>
+            <p>Deep knowledge across multiple programming languages and platforms</p>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg">
+            <h3 class="font-bold text-blue-700">Strategic Approach</h3>
+            <p>We don't just develop software; we solve business problems</p>
+          </div>
         </div>
       </section>
+
+      <!-- Core Capabilities -->
+      <section class="bg-white p-8 rounded-lg shadow-md col-span-full" id="coreCapabilities">
+        <h2 class="text-3xl font-semibold mb-6 text-blue-600 text-center">Our Core Capabilities</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-blue-100 p-6 rounded-lg text-center hover:bg-blue-200 transition">
+            <h3 class="font-bold mb-2">Custom Software Development</h3>
+          </div>
+          <div class="bg-blue-100 p-6 rounded-lg text-center hover:bg-blue-200 transition">
+            <h3 class="font-bold mb-2">Mobile & Web Design</h3>
+          </div>
+          <div class="bg-blue-100 p-6 rounded-lg text-center hover:bg-blue-200 transition">
+            <h3 class="font-bold mb-2">Cloud Solutions</h3>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Commitment Section -->
+    <section class="bg-blue-600 text-white py-16 text-center rounded-lg" id="commitment">
+      <h2 class="text-4xl font-bold mb-6">Our Commitment</h2>
+      <p class="max-w-2xl mx-auto text-xl">
+        We are more than a service provider – we are your technology transformation partner, committed to driving your
+        business forward through innovative IT solutions.
+      </p>
+    </section>
   </div>
-  </main>
 
   <script>
-    // Initialize Lucide icons
-    // lucide.createIcons();
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
 
-    // JavaScript to handle the menu toggling
-    let activeMenu = null;
+    // Hero Section Animation
+    gsap.fromTo("#heroTitle",
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+    );
+    gsap.fromTo("#heroSubtitle",
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1, delay: 0.5, ease: "power2.out" }
+    );
+    gsap.fromTo("#heroButton",
+      { opacity: 0, scale: 0.5 },
+      { opacity: 1, scale: 1, duration: 1, delay: 1, ease: "back.out" }
+    );
 
-    function toggleMenu(menuId) {
-      // Hide all menus first
-      document.querySelectorAll('div[id$="-menu"]').forEach(menu => {
-        menu.classList.add('hidden');
-      });
-
-      // Reset all button states
-      document.querySelectorAll('button[id$="-btn"]').forEach(btn => {
-        btn.classList.remove('text-blue-400');
-        btn.querySelector('i').classList.remove('rotate-180');
-      });
-
-      // If the clicked menu is already active, just close it
-      if (activeMenu === menuId) {
-        activeMenu = null;
-        return;
-      }
-
-      // Otherwise, show the clicked menu
-      const menuElement = document.getElementById(menuId + '-menu');
-      const buttonElement = document.getElementById(menuId + '-btn');
-
-      if (menuElement && buttonElement) {
-        menuElement.classList.remove('hidden');
-        buttonElement.classList.add('text-blue-400');
-        buttonElement.querySelector('i').classList.add('rotate-180');
-        activeMenu = menuId;
-      }
-    }
+    // Sections ScrollTrigger Animations
+    ["#whoWeAre", "#keyStrengths", "#coreCapabilities", "#commitment"].forEach(selector => {
+      gsap.fromTo(selector,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: selector,
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    });
   </script>
-  </div>
-  <!-- <script>
-    function toggleMenu() {
-      var menu = document.getElementById("mobile-menu");
-      menu.classList.toggle("hidden");
-    }
-  </script> -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-  <script src="../src/js/lenisScroll.js"></script>
-  <script type="module" src="../src/js/app.js"></script> -->
 </body>
 
 </html>
