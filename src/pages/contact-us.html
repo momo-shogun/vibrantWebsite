@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--  CSS -->
+   <link rel="stylesheet" href="/src/css/output.css" />
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet" />
+  <!-- Font Raleway -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <!-- jQuery (Required for Owl Carousel) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Owl Carousel JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <!--lenis scroll-->
+  <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.2.3/dist/lenis.css" />
+  <title>Vibrant IT Solutions</title>
+</head>
+
+<body class="font-[Open_Sans]">
+  <div>
+    <div class="content">
+      <div class="inset-0 blur-xl absolute w-full h-full" style="
+            background: linear-gradient(
+              143.6deg,
+              rgba(149, 167, 247, 0.171) 20.79%,
+              rgba(255, 202, 152, 0.411) 90.92%,
+              rgba(215, 176, 255, 0.288) 40.35%
+            );
+          "></div>
+    </div>
+    <div class="relative">
+      <!--Header-->
+      <header class="px-6 py-3 pt-4 md:static md:text-sm w-full border-b">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <a href="./index.html" class="md:w-[12rem] w-[8rem]">
+              <img
+                src="../src/assets/images/logo.png"
+                alt="logo"
+                class="h-full w-full"
+              />
+            </a>
+          </div>
+
+          <nav class="space-x-8 md:flex hidden items-center">
+            <a
+              href="aboutUs.html"
+              class="text-sm font-bold text-gray-800 hover:text-gray-600"
+            >
+              About
+            </a>
+
+            <a
+              href="ourServices.html"
+              class="text-sm font-bold text-gray-800 hover:text-gray-600"
+            >
+              Services
+            </a>
+
+            <a
+              href="blog.html"
+              class="text-sm font-bold text-gray-800 hover:text-gray-600"
+            >
+              Blog
+            </a>
+          </nav>
+
+          <div class="md:flex hidden">
+            <a
+              class="group relative inline-block focus:ring-3 focus:outline-hidden"
+              href="contact-us.html"
+            >
+              <span
+                class="inset-0 translate-x-1.5 translate-y-1.5 group-hover:translate-x-0 group-hover:translate-y-0 absolute bg-gradient-to-t from-[#d3977f] to-[#f7704b] transition-transform"
+              ></span>
+
+              <span
+                class="px-4 py-2 text-sm font-bold tracking-widest text-black md:px-8 md:py-3 relative inline-block border-2 border-current uppercase"
+              >
+                Contact Us
+              </span>
+            </a>
+          </div>
+
+          <!-- for Mobile Devices -->
+          <div class="md:hidden">
+            <button
+              class="text-gray-500 hover:text-gray-800"
+              onclick="toggleMenu()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="mobile-menu" class="mt-8 pb-3 md:mt-0 md:pb-0 hidden flex-1">
+          <ul
+            class="space-y-6 md:flex md:space-y-0 md:space-x-6 items-center justify-end text-center"
+          >
+            <li class="text-gray-700 hover:text-indigo-600">
+              <a
+                href="aboutUs.html"
+                class="text-sm font-bold text-gray-800 hover:text-gray-600"
+              >
+                About
+              </a>
+            </li>
+            <li class="text-gray-700 font-bold hover:text-indigo-600">
+              <a href="./ourServices.html">Services</a>
+            </li>
+            <li class="text-gray-700 font-bold hover:text-indigo-600">
+              <a href="./blog.html">Blog</a>
+            </li>
+
+            <div class="space-y-3 gap-x-6 md:flex md:space-y-0 items-center">
+              <li>
+                <a
+                  class="group relative inline-block focus:ring-3 focus:outline-hidden"
+                  href="./contact-us.html"
+                >
+                  <span
+                    class="inset-0 translate-x-1.5 translate-y-1.5 group-hover:translate-x-0 group-hover:translate-y-0 absolute bg-gradient-to-t from-[#d3977f] to-[#f7704b] transition-transform"
+                  ></span>
+
+                  <span
+                    class="px-4 py-2 text-sm font-bold tracking-widest text-black md:px-8 md:py-3 relative inline-block border-2 border-current uppercase"
+                  >
+                    Contact Us
+                  </span>
+                </a>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </header>
+      <div class="px-4  max-w-9xl container mx-auto">
+        <div class="md:grid-cols-2 gap-6 grid ">
+          <div class="flex flex-col justify-between font-[Raleway] heroContainer-js py-12  h-1/2 ">
+            <div class=" max-w-lg">
+              <p class="text-base mb-4 heroPara-js">
+                Tell us your project details and we'll get back to you ASAP
+              </p>
+              <h1 class="text-5xl lg:text-7xl text-black font-normal tracking-tight mb-6 ">
+                <div class="heroTitle-js">
+                  Let's Partners
+                </div>  <div class="heroTitle-js">
+                  Up!
+                </div>
+              </h1>
+            </div>
+            <div class="mt-6 md:mt-0">
+              <div class="md:grid-cols-2 gap-8 grid grid-cols-1 heroPara-js">
+                <a href="tel:7080803235 ">
+                  <h3 class="font-medium mb-4">Book a call :</h3>
+                  <div class="gap-3 flex items-center">
+                    <div class="h-12 w-12 bg-blue-500 text-white rounded-md flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-circle-user-round">
+                        <path d="M18 20a6 6 0 0 0-12 0" />
+                        <circle cx="12" cy="10" r="4" />
+                        <circle cx="12" cy="12" r="10" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="font-medium">Astha</p>
+                      <p class="text-sm text-gray-500">HR Executive</p>
+                    </div>
+                  </div>
+                </a>
+                <div>
+                  <h3 class="font-medium mb-4">Contact Us :</h3>
+                  <a href="mailto:info@Vibrantitsolutions.com" target="_blank" class="gap-3 flex items-center">
+                    <div class="h-12 w-12 bg-blue-500 text-white rounded-md flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-mail">
+                        <rect width="20" height="16" x="2" y="4" rx="2" />
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="font-medium">Email</p>
+                      <p class="text-sm text-gray-500">info@Vibrantitsolutions.com</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:py-12">
+            <form class="space-y-14" action="" method="post">
+              <h2 class="text-lg font-medium mb-6">
+                Tell us about your details*
+              </h2>
+              <div class="md:grid-cols-2 gap-6 grid grid-cols-2">
+                <input id="firstName" placeholder="First Name"
+                  class="p-2 placeholder:text-black placeholder:text-base focus:border-blue-500 w-full border-b border-[#ccc] focus:outline-0 focus:-outline-offset-0"
+                  type="text" />
+                <input id="lastName" placeholder="Last Name"
+                  class="p-2 placeholder:text-black placeholder:text-base focus:border-blue-500 w-full border-b border-[#ccc] focus:outline-0 focus:-outline-offset-0"
+                  type="text" />
+              </div>
+              <input id="email" placeholder="Email"
+                class="p-2 placeholder:text-black placeholder:text-base focus:border-blue-500 w-full border-b border-[#ccc] focus:outline-0 focus:-outline-offset-0"
+                type="email" />
+              <input id="companyName" placeholder="Company Name"
+                class="p-2 placeholder:text-black placeholder:text-base focus:border-blue-500 w-full border-b border-[#ccc] focus:outline-0 focus:-outline-offset-0"
+                type="text" />
+              <input id="companyIndustry" placeholder="Company Industry"
+                class="p-2 placeholder:text-black placeholder:text-base focus:border-blue-500 w-full border-b border-[#ccc] focus:outline-0 focus:-outline-offset-0"
+                type="text" />
+              <div class="space-y-4">
+                <label class="block">How we can help you?*</label>
+                <div id="service-options" class="md:grid-cols-3 gap-3 grid grid-cols-2">
+                  <div class="service-option px-4 py-4 border-gray-500 rounded-full border text-center"
+                    data-service="hosting">
+                    Hosting
+                  </div>
+                  <div class="service-option px-4 py-4 border-gray-500 rounded-full border text-center text-nowrap "
+                    data-service="hosting">
+                    Domain Registration
+                  </div>
+                  <div class="service-option px-4 py-4 border-gray-500 rounded-full border text-center"
+                    data-service="websiteDovelopment">
+                    Web Development
+                  </div>
+                  <div class="service-option px-4 py-4 border-gray-500 rounded-full border text-center"
+                    data-service="appDevelopement">
+                    App Development
+                  </div>
+                  <div class="service-option px-4 py-4 border-gray-500 rounded-full border text-center"
+                    data-service="BulkSmsServices">
+                    Bulk Sms Services
+                  </div>
+
+                  <div class="service-option px-4 py-4 border-gray-500 rounded-full border text-center"
+                    data-service="GPSTrackingDevice">
+                    GPS Tracking Device
+                  </div>
+                  <div class="service-option px-4 py-4 border-gray-500 rounded-full border text-center"
+                    data-service="BiometricAttendanceDevice">
+                    Attendance Device
+                  </div>
+                </div>
+
+                <label class="block mt-12">Project Budget ( USD )*</label>
+                <div id="pricing-options" class="md:grid-cols-4 gap-3 grid grid-cols-2">
+                  <div class="pricing-option px-4 py-4 border-gray-500 rounded-full border text-center"
+                    data-service="under5k">
+                    Under $5K
+                  </div>
+                  <div class="pricing-option px-4 py-4 border-gray-500 rounded-full border text-center"
+                    data-service="5k-10k">
+                    $5K-$10K
+                  </div>
+                  <div class="pricing-option px-4 py-4 border-gray-500 rounded-full border text-center"
+                    data-service="10k-20k">
+                    $10K-$20K
+                  </div>
+                  <div class="pricing-option px-4 py-4 border-gray-500 rounded-full border text-center"
+                    data-service="20k+">
+                    $20K+
+                  </div>
+                </div>
+                <button type="submit"
+                  class="mt-6 bg-blue-500 text-white py-3 px-6 text-lg font-normal hover:bg-blue-600 gap-4 flex w-full max-w-fit items-center justify-between rounded-full transition-colors">
+                  Submit Inquiry
+                  <div class="bg-white text-blue-600 h-14 flex aspect-square items-center justify-center rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-move-right">
+                      <path d="M18 8L22 12L18 16" />
+                      <path d="M2 12H22" />
+                    </svg>
+                  </div>
+                </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="rounded-3xl bg-gray-100">
+      <div class="max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 mx-auto">
+        <div class="lg:flex lg:items-start lg:gap-8">
+          <a href="/" class="w-[12rem]">
+            <img
+              src="../src/assets/images/logo.png"
+              alt="logo"
+              class="w-full"
+            />
+          </a>
+
+          <div
+            class="mt-8 gap-8 lg:mt-0 lg:grid-cols-4 lg:gap-y-16 grid grid-cols-2"
+          >
+            <div class="col-span-2">
+              <div>
+                <h2 class="text-2xl font-bold text-gray-900">
+                  Chat With Us!
+                </h2>
+
+                <p class="mt-4 text-gray-500">
+                  Need help with your IT project? Chat with us today and
+                  let’s bring your ideas to life!
+                </p>
+              </div>
+            </div>
+
+            <div class="lg:flex lg:items-end col-span-2">
+              <form
+                class="ms-auto"
+                action="mailto:someone@example.com"
+                method="post"
+                enctype="text/plain"
+              >
+                <div
+                  class="max-w-lg space-y-4 p-2 sm:flex sm:items-center sm:gap-4 md:space-y-0 relative justify-between"
+                >
+                  <svg
+                    class="top-4 left-3 h-6 w-6 text-gray-800 md:inset-y-0 absolute my-auto"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="{1.5}"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                    />
+                  </svg>
+                  <input
+                    type="email"
+                    required
+                    placeholder="Enter your email"
+                    class="rounded-lg bg-white py-2 pr-3 pl-12 text-gray-500 shadow-sm focus:border-indigo-600 w-full border outline-none"
+                  />
+                  <button
+                    class="mt-1 gap-2 rounded-lg bg-blue-500 px-6 py-3 text-sm font-bold tracking-wide text-white hover:bg-blue-600 sm:mt-0 sm:w-auto sm:shrink-0 flex w-full items-center justify-center uppercase transition-none"
+                  >
+                    Sent
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-send"
+                    >
+                      <path
+                        d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"
+                      />
+                      <path d="m21.854 2.147-10.94 10.939" />
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="gap-8 border-gray-100 pt-8 lg:pt-16 md:flex space-y-4 md:space-y-0 justify-between"
+        >
+          <div class="sm:col-span-1 col-span-2 mx-auto">
+            <p class="font-medium text-gray-900">Services</p>
+            <ul class="mt-2.5 space-y-2 text-sm">
+              <li>
+                <div class="text-gray-700 transition hover:opacity-75">
+                  Software Development
+                </div>
+              </li>
+              <li>
+                <div class="text-gray-700 transition hover:opacity-75">
+                  Web Applications Development
+                </div>
+              </li>
+              <li>
+                <div class="text-gray-700 transition hover:opacity-75">
+                  Web Design &amp; Development
+                </div>
+              </li>
+              <li>
+                <div class="text-gray-700 transition hover:opacity-75">
+                  Hosting &amp; Domain registration
+                </div>
+              </li>
+              <li>
+                <div class="text-gray-700 transition hover:opacity-75">
+                  Bulk Sms Services
+                </div>
+              </li>
+              <li>
+                <div class="text-gray-700 transition hover:opacity-75">
+                  GPS Tracking Device
+                </div>
+              </li>
+              <li>
+                <div class="text-gray-700 transition hover:opacity-75">
+                  Biometric Attendance Device
+                </div>
+              </li>
+              <li>
+                <div class="text-gray-700 transition hover:opacity-75">
+                  Real Estate CRM
+                </div>
+              </li>
+              <li>
+                <div class="text-gray-700 transition hover:opacity-75">
+                  School Management System(ERP)
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sm:col-span-1 col-span-2 mx-auto">
+            <p class="font-medium text-gray-900">Company</p>
+            <ul class="mt-2.5 space-y-2 text-sm">
+              <li>
+                <div class="text-gray-700 transition hover:opacity-75">
+                  HRMS
+                </div>
+              </li>
+              <li>
+                <div class="text-gray-700 transition hover:opacity-75">
+                  School ERP
+                </div>
+              </li>
+              <li>
+                <div class="text-gray-700 transition hover:opacity-75">
+                  School ERP Android
+                </div>
+              </li>
+              <li>
+                <div class="text-gray-700 transition hover:opacity-75">
+                  Point Of Sale
+                </div>
+              </li>
+              <li>
+                <div class="text-gray-700 transition hover:opacity-75">
+                  POS Touch Enabled
+                </div>
+              </li>
+              <li>
+                <div class="text-gray-700 transition hover:opacity-75">
+                  Web Based Sale
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sm:col-span-1 col-span-2 mx-auto">
+            <p class="font-medium text-gray-900">Products</p>
+            <ul class="mt-2.5 space-y-2 text-sm">
+              <li>
+                <div class="text-gray-700 hover:opacity-75">
+                  CRM & Inventory
+                </div>
+              </li>
+              <li>
+                <div class="text-gray-700 hover:opacity-75">
+                  Petrol Pump
+                </div>
+              </li>
+              <li>
+                <div class="text-gray-700 hover:opacity-75">Job Portal</div>
+              </li>
+              <li>
+                <div class="text-gray-700 hover:opacity-75">
+                  GST Billing POS
+                </div>
+              </li>
+              <li>
+                <div class="text-gray-700 hover:opacity-75">
+                  Easy Invoice Generator
+                </div>
+              </li>
+              <li>
+                <div class="text-gray-700 hover:opacity-75">Pharma X</div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sm:col-span-1 col-span-2 mx-auto">
+            <p class="font-medium text-gray-900">About Us</p>
+            <ul class="mt-2.5 space-y-2 text-sm">
+              <li>
+                <a
+                  href="/public/index.html"
+                  class="text-gray-700 transition hover:opacity-75"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/public/aboutUs.html"
+                  class="text-gray-700 transition hover:opacity-75"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/public/ourServices.html"
+                  class="text-gray-700 transition hover:opacity-75"
+                  >Our Services</a
+                >
+              </li>
+
+              <li>
+                <a
+                  href="/public/contact-us.html"
+                  class="text-gray-700 transition hover:opacity-75"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-4 border-gray-100 pt-4">
+          <div class="flex justify-center">
+            <aside class="">
+              <p class="text-xs text-gray-500">
+                &copy; 2025 Vibrant IT Solutions Pvt. Ltd. All rights
+                reserved.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  </div>
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("mobile-menu");
+      menu.classList.toggle("hidden");
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="../src/js/lenisScroll.js"></script>
+  <script type="module" src="../src/js/contactUs.js"></script>
+</body>
+
+</html>

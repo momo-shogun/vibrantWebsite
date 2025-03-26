@@ -6,3 +6,4 @@ coverage
 **/.svn
 **/.hg
 **/node_modules
+_site/

@@ -1,4 +1,18 @@
+
 {
-  "plugins": ["prettier-plugin-tailwindcss"],
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "printWidth": 80,
+  "overrides": [
+    {
+      "files": ["*.njk", "**/*.njk"],
+      "options": {
+        "parser": "jinja-template"
+      }
+    }
+  ],
+  "plugins": ["prettier-plugin-jinja-template","prettier-plugin-tailwindcss"],
   "tailwindStylesheet": "./src/css/output.css"
 }
