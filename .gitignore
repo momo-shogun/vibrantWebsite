@@ -1,3 +1,35 @@
-node_modules
+# Node.js dependencies
+node_modules/
 
-public/test.html
+# Build output
+_site/
+dist/
+build/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# OS generated files
+Thumbs.db
+
+# Log files
+*.log
+
+# Environment variables
+.env
+.env.*
+*.pem
+
+# Packages
+package-lock.json
+
+# Other generated files
+*.map
+*.cache
+
+# Example for Eleventy cache
+.11ty-cache/

@@ -3,41 +3,41 @@
 // ✅ Hero Section Animation
 export function initHeroAnimation() {
   const tlLand = gsap.timeline({
-    defaults: { duration: 1.75, ease: "power1.out" },
+    defaults: { duration: 1.75, ease: 'power1.out' },
   });
 
   tlLand
-    .from(".heroTitle-js", {
+    .from('.heroTitle-js', {
       rotationX: -100,
-      transformOrigin: "50% 50% -40px",
+      transformOrigin: '50% 50% -40px',
       opacity: 0,
       duration: 0.8,
-      ease: "power3",
+      ease: 'power3',
       stagger: 0.25,
     })
     .fromTo(
-      ".heroImage-js",
+      '.heroImage-js',
       { opacity: 0, x: -50 },
       { opacity: 1, x: 0 },
-      "<20%",
+      '<20%'
     );
 
-  const brandRedSpan = document.querySelector(".heroTitle-js");
+  const brandRedSpan = document.querySelector('.heroTitle-js');
 
   if (brandRedSpan) {
-    brandRedSpan.addEventListener("mouseenter", () => {
-      gsap.to(brandRedSpan, { scale: 1.02, duration: 0.3, ease: "power2.out" });
+    brandRedSpan.addEventListener('mouseenter', () => {
+      gsap.to(brandRedSpan, { scale: 1.02, duration: 0.3, ease: 'power2.out' });
     });
 
-    brandRedSpan.addEventListener("mouseleave", () => {
-      gsap.to(brandRedSpan, { scale: 1, duration: 0.3, ease: "power2.out" });
+    brandRedSpan.addEventListener('mouseleave', () => {
+      gsap.to(brandRedSpan, { scale: 1, duration: 0.3, ease: 'power2.out' });
     });
   }
-  const circle = document.querySelector(".bottom-circle");
-  const laptop = document.querySelector(".laptop");
-  const bottomLeftSquare = document.querySelector(".bottomLeftSquare");
+  const circle = document.querySelector('.bottom-circle');
+  const laptop = document.querySelector('.laptop');
+  const bottomLeftSquare = document.querySelector('.bottomLeftSquare');
 
-  document.addEventListener("mousemove", (event) => {
+  document.addEventListener('mousemove', (event) => {
     let moveX = (window.innerWidth / 2 - event.clientX) * 0.05; // Adjust sensitivity
     let moveY = (window.innerHeight / 2 - event.clientY) * 0.02;
 
@@ -46,7 +46,7 @@ export function initHeroAnimation() {
       y: 82,
       rotation: moveX * -0.2, // Rotate opposite to movement
       duration: 0.5,
-      ease: "power2.out",
+      ease: 'power2.out',
     });
 
     gsap.to(bottomLeftSquare, {
@@ -54,14 +54,14 @@ export function initHeroAnimation() {
       y: moveY,
       rotation: moveX * -1,
       duration: 0.5,
-      ease: "power4.out",
+      ease: 'power4.out',
     });
     gsap.to(bottomRightSquare, {
       x: moveX * -0.2,
       y: -moveY,
       rotation: moveX * 1,
       duration: 0.5,
-      ease: "power4.out",
+      ease: 'power4.out',
     });
 
     gsap.to(topRightSquare, {
@@ -69,20 +69,20 @@ export function initHeroAnimation() {
       y: moveY,
       rotation: moveX * 0.2,
       duration: 0.5,
-      ease: "power4.out",
+      ease: 'power4.out',
     });
 
     gsap.to(laptop, {
       x: -moveX * 0.5,
       y: -moveY,
       duration: 0.5,
-      ease: "power4.out",
+      ease: 'power4.out',
     });
     gsap.to(phone, {
       x: moveX * 0.5,
       y: moveY,
       duration: 0.5,
-      ease: "power4.out",
+      ease: 'power4.out',
     });
   });
 }
@@ -91,31 +91,31 @@ export function initHeroAnimation() {
 export function initStatsAnimation() {
   const mm = gsap.matchMedia();
 
-  mm.add("(min-width: 1025px)", () => {
+  mm.add('(min-width: 1025px)', () => {
     // Desktop animation
     const tlClient = gsap.timeline({
       scrollTrigger: {
-        trigger: ".client-js",
+        trigger: '.client-js',
 
         scrub: 2,
-        start: "start 80%",
-        end: "top 40%",
+        start: 'start 80%',
+        end: 'top 40%',
         delay: 2,
       },
     });
 
     tlClient.fromTo(
-      ".statsHeading-js",
+      '.statsHeading-js',
       { opacity: 0, y: 10 },
-      { opacity: 1, y: 0 },
+      { opacity: 1, y: 0 }
     );
 
     const tlStats = gsap.timeline({
       scrollTrigger: {
-        trigger: ".statsContainer",
-        start: "top 90%",
-        end: "top 90",
-        ease: "power2.out",
+        trigger: '.statsContainer',
+        start: 'top 90%',
+        end: 'top 90',
+        ease: 'power2.out',
       },
     });
 
@@ -128,47 +128,47 @@ export function initStatsAnimation() {
           snap: { innerText: 1 },
           onUpdate: function () {
             if (
-              ["employeeCount", "happyClientsCount"].includes(targetElement.id)
+              ['employeeCount', 'happyClientsCount'].includes(targetElement.id)
             ) {
-              this.targets()[0].innerText += "+";
+              this.targets()[0].innerText += '+';
             }
           },
         },
-        "<",
+        '<'
       );
     }
 
-    animateNumber("#employeeCount", 40, 2);
-    animateNumber("#experienceYears", 12, 2);
-    animateNumber("#mobileAppsCount", 20, 2);
-    animateNumber("#happyClientsCount", 350, 2);
-    animateNumber("#projectsCompleted", 420, 2);
+    animateNumber('#employeeCount', 40, 2);
+    animateNumber('#experienceYears', 12, 2);
+    animateNumber('#mobileAppsCount', 20, 2);
+    animateNumber('#happyClientsCount', 350, 2);
+    animateNumber('#projectsCompleted', 420, 2);
   });
 
-  mm.add("(max-width: 1024px)", () => {
+  mm.add('(max-width: 1024px)', () => {
     // Mobile & Tablet animation
     const tlClientMobile = gsap.timeline({
       scrollTrigger: {
-        trigger: ".client-js",
+        trigger: '.client-js',
         scrub: true,
-        start: "top 90%",
-        end: "+=120%",
+        start: 'top 90%',
+        end: '+=120%',
       },
     });
 
     tlClientMobile.fromTo(
-      ".statsHeading-js",
+      '.statsHeading-js',
       { opacity: 0, y: 100 },
-      { opacity: 1, y: 0, duration: 1.5 },
+      { opacity: 1, y: 0, duration: 1.5 }
     );
 
     const tlStatsMobile = gsap.timeline({
       scrollTrigger: {
-        trigger: ".statsContainer",
+        trigger: '.statsContainer',
 
-        start: "top 95%",
-        end: "top 80%",
-        ease: "power2.out",
+        start: 'top 95%',
+        end: 'top 80%',
+        ease: 'power2.out',
       },
     });
 
@@ -181,20 +181,20 @@ export function initStatsAnimation() {
           snap: { innerText: 1 },
           onUpdate: function () {
             if (
-              ["employeeCount", "happyClientsCount"].includes(targetElement.id)
+              ['employeeCount', 'happyClientsCount'].includes(targetElement.id)
             ) {
-              this.targets()[0].innerText += "+";
+              this.targets()[0].innerText += '+';
             }
           },
         },
-        "<",
+        '<'
       );
     }
 
-    animateNumberMobile("#employeeCount", 40, 3);
-    animateNumberMobile("#experienceYears", 12, 3);
-    animateNumberMobile("#mobileAppsCount", 20, 3);
-    animateNumberMobile("#happyClientsCount", 350, 2);
+    animateNumberMobile('#employeeCount', 40, 3);
+    animateNumberMobile('#experienceYears', 12, 3);
+    animateNumberMobile('#mobileAppsCount', 20, 3);
+    animateNumberMobile('#happyClientsCount', 350, 2);
   });
 }
 
@@ -202,97 +202,97 @@ export function initStatsAnimation() {
 export function initFeaturesAnimation() {
   const mm = gsap.matchMedia();
 
-  mm.add("(min-width: 1025px)", () => {
+  mm.add('(min-width: 1025px)', () => {
     // Desktop animation
     const tlFeature = gsap.timeline({
       scrollTrigger: {
-        trigger: ".thirdPage-js",
+        trigger: '.thirdPage-js',
         scrub: 2,
 
-        start: "-50%",
-        end: "50%",
+        start: '-50%',
+        end: '50%',
       },
     });
 
     tlFeature.fromTo(
-      ".featureHeading",
+      '.featureHeading',
       { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 1 },
+      { opacity: 1, y: 0, duration: 1 }
     );
 
-    tlFeature.from(".service-js", {
+    tlFeature.from('.service-js', {
       opacity: 0,
       y: 20,
       stagger: 0.2,
-      ease: "linear",
+      ease: 'linear',
     });
 
-    document.querySelectorAll(".service-js").forEach((button) => {
-      button.addEventListener("mouseenter", () => {
+    document.querySelectorAll('.service-js').forEach((button) => {
+      button.addEventListener('mouseenter', () => {
         gsap.to(button, {
           scale: 1.1,
-          background: "linear-gradient(264deg, #4B0082 20%  , #1447e6  )",
+          background: 'linear-gradient(264deg, #4B0082 20%  , #1447e6  )',
           duration: 0.3,
-          ease: "power2.out",
+          ease: 'power2.out',
         });
       });
 
-      button.addEventListener("mouseleave", () => {
+      button.addEventListener('mouseleave', () => {
         gsap.to(button, {
           scale: 1,
-          background: "#000",
+          background: '#000',
           duration: 1,
-          ease: "power2.out",
+          ease: 'power2.out',
         });
       });
     });
   });
 
-  mm.add("(max-width: 1024px)", () => {
+  mm.add('(max-width: 1024px)', () => {
     // Mobile & Tablet animation
     const tlFeature = gsap.timeline({
       scrollTrigger: {
-        trigger: ".thirdPage-js",
-        scrub: "true",
+        trigger: '.thirdPage-js',
+        scrub: 'true',
 
-        start: "-30%",
-        end: "80%",
+        start: '-30%',
+        end: '80%',
       },
     });
 
     tlFeature.fromTo(
-      ".featureHeading",
+      '.featureHeading',
       { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: "1.5" },
+      { opacity: 1, y: 0, duration: '1.5' }
     );
 
     tlFeature.from(
-      ".service-js",
+      '.service-js',
       {
         opacity: 0,
         y: 20,
         stagger: 0.2,
-        ease: "linear",
+        ease: 'linear',
       },
-      "<30%",
+      '<30%'
     );
 
-    document.querySelectorAll(".service-js").forEach((button) => {
-      button.addEventListener("mouseenter", () => {
+    document.querySelectorAll('.service-js').forEach((button) => {
+      button.addEventListener('mouseenter', () => {
         gsap.to(button, {
           scale: 1.1,
-          background: "linear-gradient(264deg, #4B0082 20%  , #1447e6  )",
+          background: 'linear-gradient(264deg, #4B0082 20%  , #1447e6  )',
           duration: 0.3,
-          ease: "power2.out",
+          ease: 'power2.out',
         });
       });
 
-      button.addEventListener("mouseleave", () => {
+      button.addEventListener('mouseleave', () => {
         gsap.to(button, {
           scale: 1,
-          background: "#000",
+          background: '#000',
           duration: 1,
-          ease: "power2.out",
+          ease: 'power2.out',
         });
       });
     });
@@ -303,90 +303,90 @@ export function initFeaturesAnimation() {
 export function initProcessAnimation() {
   const mm = gsap.matchMedia();
 
-  mm.add("(min-width: 1025px)", () => {
+  mm.add('(min-width: 1025px)', () => {
     // Desktop animation
     const tlProcess = gsap.timeline({
       scrollTrigger: {
-        trigger: ".forthPage-js",
+        trigger: '.forthPage-js',
         scrub: 2.75,
-        start: "-40%",
-        end: "+=105%",
+        start: '-40%',
+        end: '+=105%',
       },
     });
     tlProcess.fromTo(
-      ".processHeading",
+      '.processHeading',
       { opacity: 0.4, y: 30 },
-      { opacity: 1, y: 0, duration: 1 },
+      { opacity: 1, y: 0, duration: 1 }
     );
     tlProcess.fromTo(
-      ".process1-js",
-      { x: "40%", opacity: 0.2 },
-      { x: "0%", opacity: 1, duration: 4 },
-      "<35%",
+      '.process1-js',
+      { x: '40%', opacity: 0.2 },
+      { x: '0%', opacity: 1, duration: 4 },
+      '<35%'
     );
     tlProcess.fromTo(
-      ".process2-js",
-      { y: "20%", opacity: 0 },
-      { y: "0", opacity: 1, duration: 4 },
+      '.process2-js',
+      { y: '20%', opacity: 0 },
+      { y: '0', opacity: 1, duration: 4 }
     );
     tlProcess.fromTo(
-      ".process3-js",
-      { x: "-40%", opacity: 0 },
-      { x: "0", opacity: 1, duration: 4 },
+      '.process3-js',
+      { x: '-40%', opacity: 0 },
+      { x: '0', opacity: 1, duration: 4 }
     );
     tlProcess.fromTo(
-      ".process4-js",
-      { x: "40%", opacity: 0 },
-      { x: "0%", opacity: 1, duration: 4 },
+      '.process4-js',
+      { x: '40%', opacity: 0 },
+      { x: '0%', opacity: 1, duration: 4 }
     );
     tlProcess.fromTo(
-      ".process5-js",
-      { y: "-60%", opacity: 0 },
-      { y: "0", opacity: 1, duration: 4 },
+      '.process5-js',
+      { y: '-60%', opacity: 0 },
+      { y: '0', opacity: 1, duration: 4 }
     );
   });
 
-  mm.add("(max-width: 1024px)", () => {
+  mm.add('(max-width: 1024px)', () => {
     // Mobile & Tablet animation
     const tlProcess = gsap.timeline({
       scrollTrigger: {
-        trigger: ".forthPage-js",
+        trigger: '.forthPage-js',
 
         scrub: 2,
-        start: "top 80%",
-        end: "bottom 80%",
+        start: 'top 80%',
+        end: 'bottom 80%',
       },
     });
     tlProcess.fromTo(
-      ".processHeading",
+      '.processHeading',
       { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 2 },
+      { opacity: 1, y: 0, duration: 2 }
     );
     tlProcess.fromTo(
-      ".process1-js",
-      { x: "40%", opacity: 0.2 },
-      { x: "0%", opacity: 1, duration: 4 },
-      "<35%",
+      '.process1-js',
+      { x: '40%', opacity: 0.2 },
+      { x: '0%', opacity: 1, duration: 4 },
+      '<35%'
     );
     tlProcess.fromTo(
-      ".process2-js",
-      { y: "20%", opacity: 0 },
-      { y: "0", opacity: 1, duration: 1 },
+      '.process2-js',
+      { y: '20%', opacity: 0 },
+      { y: '0', opacity: 1, duration: 1 }
     );
     tlProcess.fromTo(
-      ".process3-js",
-      { x: "-40%", opacity: 0 },
-      { x: "0", opacity: 1, duration: 1 },
+      '.process3-js',
+      { x: '-40%', opacity: 0 },
+      { x: '0', opacity: 1, duration: 1 }
     );
     tlProcess.fromTo(
-      ".process4-js",
-      { x: "40%", opacity: 0 },
-      { x: "0%", opacity: 1, duration: 1 },
+      '.process4-js',
+      { x: '40%', opacity: 0 },
+      { x: '0%', opacity: 1, duration: 1 }
     );
     tlProcess.fromTo(
-      ".process5-js",
-      { y: "-60%", opacity: 0 },
-      { y: "0", opacity: 1, duration: 1 },
+      '.process5-js',
+      { y: '-60%', opacity: 0 },
+      { y: '0', opacity: 1, duration: 1 }
     );
   });
 }
@@ -394,54 +394,54 @@ export function initProcessAnimation() {
 // ✅ Our Client Page Animation
 export function initClientAnimation() {
   // Remove previous spans if they exist
-  const wrapperText = document.querySelector(".clientHightlight");
+  const wrapperText = document.querySelector('.clientHightlight');
 
   wrapperText.innerHTML = wrapperText.textContent
-    .split("")
+    .split('')
     .map((char) => `<span>${char}</span>`)
-    .join("");
+    .join('');
 
   // Get the spans
-  const spans = wrapperText.querySelectorAll(".clientHightlight span");
+  const spans = wrapperText.querySelectorAll('.clientHightlight span');
 
   const tlCompanies = gsap
     .timeline({
       scrollTrigger: {
-        trigger: ".fifthPage-js",
+        trigger: '.fifthPage-js',
 
-        start: "top 90%",
-        end: "0%",
+        start: 'top 90%',
+        end: '0%',
         scrub: 2.7,
       },
     })
     .set(
       spans,
       {
-        color: "#eee",
+        color: '#eee',
         stagger: 0.1,
       },
-      0.1,
+      0.1
     );
 
   tlCompanies.fromTo(
-    ".companyLogo1",
+    '.companyLogo1',
     { opacity: 0, y: 30 },
-    { opacity: 1, y: 0, duration: 2 },
+    { opacity: 1, y: 0, duration: 2 }
   );
   tlCompanies.fromTo(
-    ".companyLogo2",
+    '.companyLogo2',
     { opacity: 0, y: 30 },
-    { opacity: 1, y: 0, duration: 2 },
+    { opacity: 1, y: 0, duration: 2 }
   );
   tlCompanies.fromTo(
-    ".companyLogo3",
+    '.companyLogo3',
     { opacity: 0, y: 30 },
-    { opacity: 1, y: 0, duration: 2 },
+    { opacity: 1, y: 0, duration: 2 }
   );
   tlCompanies.fromTo(
-    ".companyLogo4",
+    '.companyLogo4',
     { opacity: 0, y: 30 },
-    { opacity: 1, y: 0, duration: 2 },
+    { opacity: 1, y: 0, duration: 2 }
   );
 }
 
@@ -449,52 +449,52 @@ export function initClientAnimation() {
 export function initTestimonialsAnimation() {
   const mm = gsap.matchMedia();
 
-  mm.add("(min-width: 1025px)", () => {
+  mm.add('(min-width: 1025px)', () => {
     // Desktop animation
     let tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".sixthPage-js",
-        start: "top top",
-        end: "+=250%",
+        trigger: '.sixthPage-js',
+        start: 'top top',
+        end: '+=250%',
         scrub: 2,
         pin: true,
       },
     });
 
-    const testimonials = gsap.utils.toArray(".testimonial");
+    const testimonials = gsap.utils.toArray('.testimonial');
 
     testimonials.forEach((testimonial) => {
       tl.fromTo(
         testimonial,
         { yPercent: 0, opacity: 1 },
-        { yPercent: -500, opacity: 1, duration: 2, ease: "none" },
-        "<24%",
+        { yPercent: -500, opacity: 1, duration: 2, ease: 'none' },
+        '<24%'
       );
     });
   });
 
-  mm.add("(max-width: 1024px)", () => {
+  mm.add('(max-width: 1024px)', () => {
     mm;
     // Mobile and tablet animation
     let tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".sixthPage-js",
+        trigger: '.sixthPage-js',
 
-        start: "top top",
-        end: "+=250%",
+        start: 'top top',
+        end: '+=250%',
         scrub: 2,
         pin: true,
       },
     });
 
-    const testimonials = gsap.utils.toArray(".testimonial");
+    const testimonials = gsap.utils.toArray('.testimonial');
 
     testimonials.forEach((testimonial) => {
       tl.fromTo(
         testimonial,
         { yPercent: 0, opacity: 1 },
-        { yPercent: -500, opacity: 1, duration: 2, ease: "none" },
-        "<24%",
+        { yPercent: -500, opacity: 1, duration: 2, ease: 'none' },
+        '<24%'
       );
     });
   });
