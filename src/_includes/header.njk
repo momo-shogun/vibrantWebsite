@@ -1,0 +1,466 @@
+<!--Header-->
+<header class="text-white top-0 sticky z-99 bg-[#1a1a1a]">
+  <div class="px-4 h-16 container mx-auto flex items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center">
+      <a href="/" class="text-white flex items-center justify-center">
+        <div class="h-12 w-12 text-2xl">
+          <div class="size-12 text-2xl">
+            <img src="../src/assets/images/logoOnly.png" alt="logo" class="h-full w-full object-cover" />
+          </div>
+        </div>
+        <div class="leading-tight text-lg ml-2 mt-[-2px]">
+          <span class="font-bold">Vibrant</span>
+          <br />
+          IT Solutions
+        </div>
+      </a>
+    </div>
+
+    <!-- Primary Navigation (Desktop) -->
+    <nav class="lg:flex hidden">
+      <ul class="space-x-1 flex">
+        <li>
+          <button id="what-we-do-btn" class="px-4 py-2 hover:text-gray-300 flex items-center"
+            onclick="toggleMenu('what-we-do')">
+            What we do
+            <i data-lucide="chevron-down" class="ml-1 h-4 w-4 transition-transform"></i>
+          </button>
+        </li>
+        <li>
+          <button id="who-we-are-btn" class="px-4 py-2 hover:text-gray-300 flex items-center"
+            onclick="toggleMenu('who-we-are')">
+            Who we are
+            <i data-lucide="chevron-down" class="ml-1 h-4 w-4 transition-transform"></i>
+          </button>
+        </li>
+        <li>
+          <button id="insights-btn" class="px-4 py-2 hover:text-gray-300 flex items-center"
+            onclick="toggleMenu('insights')">
+            Insights
+            <i data-lucide="chevron-down" class="ml-1 h-4 w-4 transition-transform"></i>
+          </button>
+        </li>
+        <li>
+          <button id="careers-btn" class="px-4 py-2 hover:text-gray-300 flex items-center"
+            onclick="toggleMenu('careers')">
+            Careers
+            <i data-lucide="chevron-down" class="ml-1 h-4 w-4 transition-transform"></i>
+          </button>
+        </li>
+        <li>
+          <button id="blogs-btn" class="px-4 py-2 hover:text-gray-300 flex items-center" onclick="toggleMenu('blogs')">
+            Blogs
+            <i data-lucide="chevron-down" class="ml-1 h-4 w-4 transition-transform"></i>
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="space-x-6 lg:flex hidden items-center">
+      <div class="md:flex space-x-6 items-center">
+        <a href="contact-us.html" class="text-sm hover:text-gray-300">
+          CONTACT US
+        </a>
+      </div>
+    </div>
+
+    <!-- <div class="md:flex hidden py-4">
+            <a class="group relative inline-block focus:ring-3 focus:outline-hidden" href="contact-us.html">
+              <span
+                class="inset-0 translate-x-1.5 translate-y-1 group-hover:translate-x-0 group-hover:translate-y-0 absolute bg-gradient-to-t from-[#d3977f] to-[#f7704b] transition-transform"></span>
+
+              <span
+                class="px-4 py-2 text-sm font-bold tracking-widest text-white md:px-8 md:py-3 relative inline-block border-2 border-[#481E14] uppercase">
+                Contact Us
+              </span>
+            </a>
+          </div> -->
+
+    <!-- Mobile Menu Toggle -->
+    <div class="lg:hidden">
+      <button id="mobile-menu-toggle" class="p-2 text-gray-200 hover:text-gray-500" onclick="toggleMobileMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="lg:hidden text-white hidden bg-[#1a1a1a]">
+    <nav class="px-4 py-4 border-gray-800 border-t">
+      <ul class="space-y-4">
+        <li>
+          <div class="relative">
+            <button class="py-2 flex w-full items-center justify-between"
+              onclick="toggleMobileSubmenu('mobile-what-we-do')">
+              <span>What we do</span>
+              <i data-lucide="chevron-down" class="h-4 w-4 transition-transform"></i>
+            </button>
+            <div id="mobile-what-we-do" class="mt-2 py-2 px-4 rounded-md space-y-2 hidden bg-[#252525]">
+              <a href="../public/aboutUs.html" class="py-2 block">Overview</a>
+              <!-- <a href="/industries" class="block py-2">Industries</a> -->
+              <a href="../public/ourServices.html" class="py-2 block">Services</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="relative">
+            <button class="py-2 flex w-full items-center justify-between"
+              onclick="toggleMobileSubmenu('mobile-who-we-are')">
+              <span>Who we are</span>
+              <i data-lucide="chevron-down" class="h-4 w-4 transition-transform"></i>
+            </button>
+            <div id="mobile-who-we-are" class="mt-2 py-2 px-4 rounded-md space-y-2 hidden bg-[#252525]">
+              <a href="./public/aboutUs.html" class="py-2 block">About Us</a>
+              <a href="/partners" class="py-2 block">Partners</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="relative">
+            <button class="py-2 flex w-full items-center justify-between"
+              onclick="toggleMobileSubmenu('mobile-insights')">
+              <span>Insights</span>
+              <i data-lucide="chevron-down" class="h-4 w-4 transition-transform"></i>
+            </button>
+            <div id="mobile-insights" class="mt-2 py-2 px-4 rounded-md space-y-2 hidden bg-[#252525]">
+              <a href="/case-studies" class="py-2 block">Case Studies</a>
+              <a href="/white-papers" class="py-2 block">White Papers</a>
+              <a href="/reports" class="py-2 block">Reports</a>
+              <a href="/webinars" class="py-2 block">Webinars</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="relative">
+            <button class="py-2 flex w-full items-center justify-between"
+              onclick="toggleMobileSubmenu('mobile-careers')">
+              <span>Careers</span>
+              <i data-lucide="chevron-down" class="h-4 w-4 transition-transform"></i>
+            </button>
+            <div id="mobile-careers" class="mt-2 py-2 px-4 rounded-md space-y-2 hidden bg-[#252525]">
+              <a href="/job-openings" class="py-2 block">Job Openings</a>
+              <a href="/life-at-vibrant" class="py-2 block">Life at Vibrant</a>
+              <a href="/benefits" class="py-2 block">Benefits</a>
+              <a href="/learning" class="py-2 block">Learning & Development</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="relative">
+            <button class="py-2 flex w-full items-center justify-between" onclick="toggleMobileSubmenu('mobile-blogs')">
+              <span>Blogs</span>
+              <i data-lucide="chevron-down" class="h-4 w-4 transition-transform"></i>
+            </button>
+            <div id="mobile-blogs" class="mt-2 py-2 px-4 rounded-md space-y-2 hidden bg-[#252525]">
+              <a href="/technology" class="py-2 block">Technology</a>
+              <a href="/innovation" class="py-2 block">Innovation</a>
+              <a href="/digital-transformation" class="py-2 block">Digital Transformation</a>
+              <a href="/industry-insights" class="py-2 block">Industry Insights</a>
+            </div>
+          </div>
+        </li>
+        <li class="pt-2 border-gray-800 border-t">
+          <a href="/contact" class="py-2 block">CONTACT US</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Mega Menu for Desktop -->
+  <div id="what-we-do-menu"
+    class="text-white top-16 left-0 border-gray-800 shadow-xl absolute z-50 hidden w-full border-t bg-[#121212]">
+    <div class="py-8 px-4 container mx-auto">
+      <div class="md:grid-cols-5 gap-8 grid grid-cols-1">
+        <div class="col-span-1">
+          <nav>
+            <ul class="space-y-2">
+              <li>
+                <a href="../public/aboutUs.html"
+                  class="py-2 px-3 hover:bg-gray-800 rounded-md group flex items-center justify-between">
+                  <span class="font-medium">Overview</span>
+                  <i data-lucide="chevron-right"
+                    class="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"></i>
+                </a>
+              </li>
+              <li>
+                <a href="../public/ourServices.html"
+                  class="py-2 px-3 hover:bg-gray-800 rounded-md group flex items-center justify-between">
+                  <span class="font-medium">Services</span>
+                  <i data-lucide="chevron-right"
+                    class="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"></i>
+                </a>
+              </li>
+              <li>
+                <a href="/products"
+                  class="py-2 px-3 hover:bg-gray-800 rounded-md group flex items-center justify-between">
+                  <span class="font-medium">Products</span>
+                  <i data-lucide="chevron-right"
+                    class="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="md:pl-8 border-gray-800 col-span-4 border-l">
+          <div class="max-w-2xl">
+            <h2 class="text-2xl font-bold mb-4">
+              Vibrant IT is here to make a difference through technology.
+            </h2>
+            <p class="text-gray-400 mb-6">
+              Leading the way in innovation for over 15 years, we build greater
+              futures for businesses across multiple industries and 25
+              countries.
+            </p>
+            <a href="/solutions"
+              class="border-white px-6 py-2 hover:bg-white hover:text-black inline-block rounded-full border transition-colors">
+              Discover all solutions
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="who-we-are-menu"
+    class="text-white top-16 left-0 border-gray-800 shadow-xl absolute z-50 hidden w-full border-t bg-[#121212]">
+    <div class="py-8 px-4 container mx-auto">
+      <div class="md:grid-cols-5 gap-8 grid grid-cols-1">
+        <div class="col-span-1">
+          <nav>
+            <ul class="space-y-2">
+              <li>
+                <a href="/about" class="py-2 px-3 hover:bg-gray-800 rounded-md group flex items-center justify-between">
+                  <span class="font-medium">About Us</span>
+                  <i data-lucide="chevron-right"
+                    class="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"></i>
+                </a>
+              </li>
+              <li>
+                <a href="/leadership"
+                  class="py-2 px-3 hover:bg-gray-800 rounded-md group flex items-center justify-between">
+                  <span class="font-medium">Leadership</span>
+                  <i data-lucide="chevron-right"
+                    class="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"></i>
+                </a>
+              </li>
+              <li>
+                <a href="/partners"
+                  class="py-2 px-3 hover:bg-gray-800 rounded-md group flex items-center justify-between">
+                  <span class="font-medium">Partners</span>
+                  <i data-lucide="chevron-right"
+                    class="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"></i>
+                </a>
+              </li>
+              <li>
+                <a href="/sustainability"
+                  class="py-2 px-3 hover:bg-gray-800 rounded-md group flex items-center justify-between">
+                  <span class="font-medium">Sustainability</span>
+                  <i data-lucide="chevron-right"
+                    class="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="md:pl-8 border-gray-800 col-span-4 border-l">
+          <div class="max-w-2xl">
+            <h2 class="text-2xl font-bold mb-4">
+              Our mission is to help businesses transform through technology
+            </h2>
+            <p class="text-gray-400 mb-6">
+              With a team of dedicated experts and innovative solutions, we're
+              committed to driving digital transformation for our clients.
+            </p>
+            <a href="/about"
+              class="border-white px-6 py-2 hover:bg-white hover:text-black inline-block rounded-full border transition-colors">
+              Learn more about us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="insights-menu"
+    class="text-white top-16 left-0 border-gray-800 shadow-xl absolute z-50 hidden w-full border-t bg-[#121212]">
+    <div class="py-8 px-4 container mx-auto">
+      <div class="md:grid-cols-5 gap-8 grid grid-cols-1">
+        <div class="col-span-1">
+          <nav>
+            <ul class="space-y-2">
+              <li>
+                <a href="/case-studies"
+                  class="py-2 px-3 hover:bg-gray-800 rounded-md group flex items-center justify-between">
+                  <span class="font-medium">Case Studies</span>
+                  <i data-lucide="chevron-right"
+                    class="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"></i>
+                </a>
+              </li>
+              <li>
+                <a href="/white-papers"
+                  class="py-2 px-3 hover:bg-gray-800 rounded-md group flex items-center justify-between">
+                  <span class="font-medium">White Papers</span>
+                  <i data-lucide="chevron-right"
+                    class="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"></i>
+                </a>
+              </li>
+              <li>
+                <a href="/reports"
+                  class="py-2 px-3 hover:bg-gray-800 rounded-md group flex items-center justify-between">
+                  <span class="font-medium">Reports</span>
+                  <i data-lucide="chevron-right"
+                    class="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"></i>
+                </a>
+              </li>
+              <li>
+                <a href="/webinars"
+                  class="py-2 px-3 hover:bg-gray-800 rounded-md group flex items-center justify-between">
+                  <span class="font-medium">Webinars</span>
+                  <i data-lucide="chevron-right"
+                    class="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="md:pl-8 border-gray-800 col-span-4 border-l">
+          <div class="max-w-2xl">
+            <h2 class="text-2xl font-bold mb-4">
+              Discover our latest insights and thought leadership
+            </h2>
+            <p class="text-gray-400 mb-6">
+              Stay ahead of the curve with our latest research, reports, and
+              industry insights.
+            </p>
+            <a href="/insights"
+              class="border-white px-6 py-2 hover:bg-white hover:text-black inline-block rounded-full border transition-colors">
+              View all insights
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="careers-menu"
+    class="text-white top-16 left-0 border-gray-800 shadow-xl absolute z-50 hidden w-full border-t bg-[#121212]">
+    <div class="py-8 px-4 container mx-auto">
+      <div class="md:grid-cols-5 gap-8 grid grid-cols-1">
+        <div class="col-span-1">
+          <nav>
+            <ul class="space-y-2">
+              <li>
+                <a href="/job-openings"
+                  class="py-2 px-3 hover:bg-gray-800 rounded-md group flex items-center justify-between">
+                  <span class="font-medium">Job Openings</span>
+                  <i data-lucide="chevron-right"
+                    class="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"></i>
+                </a>
+              </li>
+              <li>
+                <a href="/life-at-vibrant"
+                  class="py-2 px-3 hover:bg-gray-800 rounded-md group flex items-center justify-between">
+                  <span class="font-medium">Life at Vibrant</span>
+                  <i data-lucide="chevron-right"
+                    class="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"></i>
+                </a>
+              </li>
+              <li>
+                <a href="/benefits"
+                  class="py-2 px-3 hover:bg-gray-800 rounded-md group flex items-center justify-between">
+                  <span class="font-medium">Benefits</span>
+                  <i data-lucide="chevron-right"
+                    class="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"></i>
+                </a>
+              </li>
+              <li>
+                <a href="/learning"
+                  class="py-2 px-3 hover:bg-gray-800 rounded-md group flex items-center justify-between">
+                  <span class="font-medium">Learning & Development</span>
+                  <i data-lucide="chevron-right"
+                    class="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="md:pl-8 border-gray-800 col-span-4 border-l">
+          <div class="max-w-2xl">
+            <h2 class="text-2xl font-bold mb-4">Join our team of innovators</h2>
+            <p class="text-gray-400 mb-6">
+              Discover exciting career opportunities and grow with a company
+              that values innovation, diversity, and professional development.
+            </p>
+            <a href="/careers"
+              class="border-white px-6 py-2 hover:bg-white hover:text-black inline-block rounded-full border transition-colors">
+              Explore careers
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="blogs-menu"
+    class="text-white top-16 left-0 border-gray-800 shadow-xl absolute z-50 hidden w-full border-t bg-[#121212]">
+    <div class="py-8 px-4 container mx-auto">
+      <div class="md:grid-cols-5 gap-8 grid grid-cols-1">
+        <div class="col-span-1">
+          <nav>
+            <ul class="space-y-2">
+              <li>
+                <a href="/technology"
+                  class="py-2 px-3 hover:bg-gray-800 rounded-md group flex items-center justify-between">
+                  <span class="font-medium">Technology</span>
+                  <i data-lucide="chevron-right"
+                    class="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"></i>
+                </a>
+              </li>
+              <li>
+                <a href="/innovation"
+                  class="py-2 px-3 hover:bg-gray-800 rounded-md group flex items-center justify-between">
+                  <span class="font-medium">Innovation</span>
+                  <i data-lucide="chevron-right"
+                    class="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"></i>
+                </a>
+              </li>
+              <li>
+                <a href="/digital-transformation"
+                  class="py-2 px-3 hover:bg-gray-800 rounded-md group flex items-center justify-between">
+                  <span class="font-medium">Digital Transformation</span>
+                  <i data-lucide="chevron-right"
+                    class="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"></i>
+                </a>
+              </li>
+              <li>
+                <a href="/industry-insights"
+                  class="py-2 px-3 hover:bg-gray-800 rounded-md group flex items-center justify-between">
+                  <span class="font-medium">Industry Insights</span>
+                  <i data-lucide="chevron-right"
+                    class="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-100"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="md:pl-8 border-gray-800 col-span-4 border-l">
+          <div class="max-w-2xl">
+            <h2 class="text-2xl font-bold mb-4">Read our latest blog posts</h2>
+            <p class="text-gray-400 mb-6">
+              Explore our collection of articles on technology trends, industry
+              insights, and digital transformation strategies.
+            </p>
+            <a href="/blogs"
+              class="border-white px-6 py-2 hover:bg-white hover:text-black inline-block rounded-full border transition-colors">
+              View all blogs
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,4 +1,4 @@
-// main.js
+// app.js
 import {
   initHeroAnimation,
   initStatsAnimation,

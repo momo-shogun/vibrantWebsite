@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css --watch",
     "start": "eleventy --serve",
-    "build": "eleventy",
-    "format": "prettier --write \"src/**/*.{html,njk,js}\""
+    "build": "eleventy"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +15,6 @@
     "@11ty/eleventy": "^3.0.0",
     "@tailwindcss/cli": "^4.0.8",
     "nunjucks": "^3.2.4",
-    "prettier-plugin-jinja-template": "^2.0.0",
     "tailwindcss": "^4.0.8"
   },
   "devDependencies": {
