@@ -262,9 +262,6 @@
   .absolute {
     position: absolute;
   }
-  .fixed {
-    position: fixed;
-  }
   .relative {
     position: relative;
   }
@@ -1237,9 +1234,6 @@
   }
   .text-left {
     text-align: left;
-  }
-  .font-\[Open_Sans\] {
-    font-family: Open Sans;
   }
   .font-\[Raleway\] {
     font-family: Raleway;
