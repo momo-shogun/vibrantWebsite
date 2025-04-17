@@ -1,5 +1,6 @@
 // gsapAnimations.js
 
+
 // ✅ Hero Section Animation
 export function initHeroAnimation() {
   const tlLand = gsap.timeline({

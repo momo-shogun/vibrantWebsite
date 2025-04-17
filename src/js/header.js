@@ -1,36 +1,44 @@
-//menu
+// Keep track of active menu
 let activeMenu = null;
+
 function toggleMenu(menuId) {
   // Close mobile menu if it's open
   document.getElementById('mobile-menu').classList.add('hidden');
 
-  // Hide all desktop menus first
-  document
-    .querySelectorAll('div[id$="-menu"]:not([id^="mobile"])')
-    .forEach((menu) => {
-      menu.classList.add('hidden');
-    });
+  // Get elements
+  const menuElement = document.getElementById(menuId + '-menu');
+  const buttonElement = document.getElementById(menuId + '-btn');
+  const icon = buttonElement.querySelector('i');
 
-  // Reset all desktop button states
+  // Close all desktop menus first
+  document.querySelectorAll('div[id$="-menu"]:not([id^="mobile"])').forEach((menu) => {
+    if (menu !== menuElement) {
+      gsap.to(menu, { height: 0, opacity: 0, duration: 0.3, ease: "power2.inOut", onComplete: () => menu.classList.add('hidden') });
+    }
+  });
+
+  // Reset all button states
   document.querySelectorAll('button[id$="-btn"]').forEach((btn) => {
     btn.classList.remove('text-blue-400');
     btn.querySelector('i').classList.remove('rotate-180');
   });
 
-  // If the clicked menu is already active, just close it
+  // If the clicked menu is already active, close it
   if (activeMenu === menuId) {
+    gsap.to(menuElement, { height: 0, opacity: 0, duration: 0.3, ease: "power2.inOut", onComplete: () => menuElement.classList.add('hidden') });
+    gsap.to(icon, { rotate: 0, duration: 0.3 });
     activeMenu = null;
     return;
   }
 
   // Otherwise, show the clicked menu
-  const menuElement = document.getElementById(menuId + '-menu');
-  const buttonElement = document.getElementById(menuId + '-btn');
-
   if (menuElement && buttonElement) {
     menuElement.classList.remove('hidden');
+    gsap.fromTo(menuElement, { height: 0, opacity: 0 }, { height: "auto", opacity: 1, duration: 0.4, ease: "power2.out" });
+
     buttonElement.classList.add('text-blue-400');
-    buttonElement.querySelector('i').classList.add('rotate-180');
+    gsap.to(icon, { rotate: 180, duration: 0.3 });
+
     activeMenu = menuId;
   }
 }
@@ -38,13 +46,11 @@ function toggleMenu(menuId) {
 // Mobile menu toggle
 function toggleMobileMenu() {
   // Close any open desktop mega menus
-  document
-    .querySelectorAll('div[id$="-menu"]:not([id^="mobile"])')
-    .forEach((menu) => {
-      menu.classList.add('hidden');
-    });
+  document.querySelectorAll('div[id$="-menu"]:not([id^="mobile"])').forEach((menu) => {
+    gsap.to(menu, { height: 0, opacity: 0, duration: 0.3, ease: "power2.inOut", onComplete: () => menu.classList.add('hidden') });
+  });
 
-  // Reset desktop button states
+  // Reset button states
   document.querySelectorAll('button[id$="-btn"]').forEach((btn) => {
     btn.classList.remove('text-blue-400');
     btn.querySelector('i').classList.remove('rotate-180');
@@ -64,36 +70,15 @@ function toggleMobileMenu() {
   lucide.createIcons();
 }
 
-// Mobile submenu toggle
-function toggleMobileSubmenu(submenuId) {
-  const submenu = document.getElementById(submenuId);
-  const button = submenu.previousElementSibling;
-  const icon = button.querySelector('i');
-
-  // Toggle the submenu
-  submenu.classList.toggle('hidden');
-
-  // Toggle the icon rotation
-  if (submenu.classList.contains('hidden')) {
-    icon.classList.remove('rotate-180');
-  } else {
-    icon.classList.add('rotate-180');
-  }
-}
-
 // Close menus when clicking outside
 document.addEventListener('click', function (event) {
   const isClickInsideHeader = event.target.closest('header');
 
   if (!isClickInsideHeader && activeMenu) {
-    // Close desktop mega menus
-    document
-      .querySelectorAll('div[id$="-menu"]:not([id^="mobile"])')
-      .forEach((menu) => {
-        menu.classList.add('hidden');
-      });
+    document.querySelectorAll('div[id$="-menu"]:not([id^="mobile"])').forEach((menu) => {
+      gsap.to(menu, { height: 0, opacity: 0, duration: 0.3, ease: "power2.inOut", onComplete: () => menu.classList.add('hidden') });
+    });
 
-    // Reset button states
     document.querySelectorAll('button[id$="-btn"]').forEach((btn) => {
       btn.classList.remove('text-blue-400');
       btn.querySelector('i').classList.remove('rotate-180');
@@ -106,23 +91,16 @@ document.addEventListener('click', function (event) {
 // Close menus on window resize
 window.addEventListener('resize', function () {
   if (window.innerWidth >= 1024) {
-    // lg breakpoint
-    // Close mobile menu
     document.getElementById('mobile-menu').classList.add('hidden');
 
-    // Reset mobile menu icon
     const menuIcon = document.querySelector('#mobile-menu-toggle i');
     menuIcon.setAttribute('data-lucide', 'menu');
     lucide.createIcons();
   } else {
-    // Close desktop mega menus
-    document
-      .querySelectorAll('div[id$="-menu"]:not([id^="mobile"])')
-      .forEach((menu) => {
-        menu.classList.add('hidden');
-      });
+    document.querySelectorAll('div[id$="-menu"]:not([id^="mobile"])').forEach((menu) => {
+      gsap.to(menu, { height: 0, opacity: 0, duration: 0.3, ease: "power2.inOut", onComplete: () => menu.classList.add('hidden') });
+    });
 
-    // Reset button states
     document.querySelectorAll('button[id$="-btn"]').forEach((btn) => {
       btn.classList.remove('text-blue-400');
       btn.querySelector('i').classList.remove('rotate-180');

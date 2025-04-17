@@ -6,7 +6,7 @@ import {
   initProcessAnimation,
   initClientAnimation,
   initTestimonialsAnimation,
-} from './gsapAnimation.js';
+} from './indexGsapAnimation.js';
 
 // slick slider
 $(document).ready(function () {
