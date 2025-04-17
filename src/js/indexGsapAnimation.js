@@ -211,7 +211,7 @@ export function initFeaturesAnimation() {
         scrub: 2,
 
         start: '-50%',
-        end: '50%',
+        end: '1%',
       },
     });
 
@@ -235,6 +235,7 @@ export function initFeaturesAnimation() {
           background: 'linear-gradient(264deg, #4B0082 20%  , #1447e6  )',
           duration: 0.3,
           ease: 'power2.out',
+          
         });
       });
 
