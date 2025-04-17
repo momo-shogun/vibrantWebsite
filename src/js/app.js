@@ -1,4 +1,4 @@
-// main.js
+// app.js
 import {
   initHeroAnimation,
   initStatsAnimation,
@@ -6,19 +6,19 @@ import {
   initProcessAnimation,
   initClientAnimation,
   initTestimonialsAnimation,
-} from "./gsapAnimation.js";
+} from './indexGsapAnimation.js';
 
 // slick slider
 $(document).ready(function () {
   // Initialize Owl Carousel with optimal settings
-  $(".owl-carousel").owlCarousel({
+  $('.owl-carousel').owlCarousel({
     loop: true,
     margin: 10,
     autoplay: true,
     dots: false,
     autoplayHoverPause: true,
     autoplaySpeed: 8000,
-    slideTransition: "linear",
+    slideTransition: 'linear',
     draggable: true,
     fade: true,
     pauseOnFocus: true,
@@ -33,7 +33,7 @@ $(document).ready(function () {
 
 //gsap animation
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   initHeroAnimation();
   initStatsAnimation();
   initFeaturesAnimation();

@@ -14,7 +14,7 @@ export class ElementAnimator {
       y: config.y,
       rotation: config.rotation,
       duration: config.duration,
-      ease: config.ease || "power1.inOut",
+      ease: config.ease || 'power1.inOut',
       mouseMoveScale: config.mouseMoveScale || 20,
       inactivityTimeout: config.inactivityTimeout || 2000,
     };
@@ -38,13 +38,13 @@ export class ElementAnimator {
   init() {
     // Validate required elements
     if (!this.element || !this.container) {
-      console.error("Required elements not found for animation");
+      console.error('Required elements not found for animation');
       return;
     }
 
     // Add event listeners
-    this.container.addEventListener("mousemove", this.handleMouseMove);
-    this.container.addEventListener("mouseleave", this.handleMouseLeave);
+    this.container.addEventListener('mousemove', this.handleMouseMove);
+    this.container.addEventListener('mouseleave', this.handleMouseLeave);
 
     // Trigger initial auto-movement after page load
     setTimeout(this.startAutoMovement, 500);
@@ -112,14 +112,14 @@ export class ElementAnimator {
       x: deltaX,
       y: deltaY,
       rotation: deltaX * 0.5, // Slight rotation based on movement
-      ease: "power1.out",
+      ease: 'power1.out',
       duration: 0.5,
     });
 
     // Set timeout to restart auto-movement
     this.mouseMoveTimeout = setTimeout(
       this.startAutoMovement,
-      this.animationConfig.inactivityTimeout,
+      this.animationConfig.inactivityTimeout
     );
   }
 
@@ -138,8 +138,8 @@ export class ElementAnimator {
    * Destroy the animator and remove event listeners
    */
   destroy() {
-    this.container.removeEventListener("mousemove", this.handleMouseMove);
-    this.container.removeEventListener("mouseleave", this.handleMouseLeave);
+    this.container.removeEventListener('mousemove', this.handleMouseMove);
+    this.container.removeEventListener('mouseleave', this.handleMouseLeave);
 
     if (this.currentAutoMovement) {
       this.currentAutoMovement.kill();
