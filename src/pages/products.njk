@@ -1,0 +1,109 @@
+---
+layout: base.njk
+permalink: /products.html
+---
+
+<style>
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .blob-animate {
+    animation: float 10s ease-in-out infinite;
+  }
+</style>
+
+<div class="relative overflow-hidden bg-white">
+
+  <!-- SVG Blobs (Haikei Style) -->
+  <div class="absolute top-[-100px] left-[-150px] w-[600px] z-0 opacity-20 blob-animate">
+    <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(300,300)">
+        <path d="M120,-169.7C149.8,-130.1,159.1,-84.2,165.4,-36.3C171.8,11.7,175.1,60.7,154.3,96.2C133.5,131.7,88.5,153.6,41.3,166.2C-5.8,178.7,-54.2,181.9,-91.7,159.5C-129.1,137.2,-155.5,89.3,-158.4,44.3C-161.3,-0.8,-140.8,-42.9,-113.7,-83.6C-86.5,-124.2,-52.8,-163.4,-10.8,-159.1C31.3,-154.9,62.6,-107.3,120,-169.7Z" fill="#c084fc" />
+      </g>
+    </svg>
+  </div>
+
+  <div class="absolute bottom-[-100px] right-[-150px] w-[600px] z-0 opacity-20 blob-animate" style="animation-delay: 4s;">
+    <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(300,300)">
+        <path d="M153.2,-132.2C184.7,-95.3,187.1,-38.5,175.2,17.8C163.2,74.2,137,129.9,91.7,154.4C46.4,178.9,-17.9,172.1,-73.2,145.6C-128.5,119.1,-174.8,72.9,-184.2,21.1C-193.6,-30.6,-166.2,-87.9,-122.3,-128.7C-78.4,-169.5,-19.2,-193.9,34.1,-190.1C87.5,-186.4,135.8,-154.8,153.2,-132.2Z" fill="#60a5fa" />
+      </g>
+    </svg>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+
+    <!-- Header -->
+    <div class="text-center mb-24">
+      <h1 class="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-6">
+        Our Innovative Products
+      </h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Explore smart, scalable solutions designed to revolutionize your operations and drive growth.
+      </p>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 relative z-10">
+      {% for product in [
+        {
+          img: 'src/assets/ourServices/Service1.png',
+          title: 'HR + CRM Suite',
+          desc: 'An integrated system for managing human resources, customer relationships, and project workflows efficiently.'
+        },
+        {
+          img: 'src/assets/ourServices/Service2.png',
+          title: 'Unified Ops Hub',
+          desc: 'A unified platform for streamlined HR management, CRM, and project tracking.'
+        },
+        {
+          img: 'src/assets/ourServices/Service3.png',
+          title: 'AI Studio Platform',
+          desc: 'A powerful AI suite to create, train, and deploy models with real-time collaboration and tracking.'
+        }
+      ] %}
+
+      <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 group text-center backdrop-blur-sm bg-opacity-90">
+        <div class="relative mb-4">
+          <img src="{{ product.img }}" alt="Product Screenshot" class="w-full h-auto object-cover rounded-lg border border-blue-500">
+          <span class="absolute top-2 left-2 bg-blue-100 text-blue-600 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
+            New
+          </span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition">
+          {{ product.title }}
+        </h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+          {{ product.desc }}
+        </p>
+        <a href="#"
+           class="inline-flex items-center text-sm font-medium text-pink-600 hover:text-pink-700 transition-all group-hover:underline">
+          Open Now
+          <svg class="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M12.293 4.293a1 1 0 011.414 1.414L10.414 9H17a1 1 0 110 2h-6.586l3.293 3.293a1 1 0 01-1.414 1.414l-5-5a1 1 0 010-1.414l5-5z"/>
+          </svg>
+        </a>
+      </div>
+
+      {% endfor %}
+    </div>
+
+    <!-- Call to Action -->
+    <div class="mt-32 text-center bg-gradient-to-br from-blue-600 to-purple-600 text-white p-12 rounded-3xl shadow-xl relative overflow-hidden z-10">
+      <div class="absolute -bottom-20 -right-20 w-[300px] h-[300px] bg-white/10 rounded-full blur-3xl"></div>
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-4 relative z-10">
+        Ready to transform your business?
+      </h2>
+      <p class="text-lg text-white/90 max-w-xl mx-auto mb-8 relative z-10">
+        Talk with our expert team today to unlock your full potential with our solutions.
+      </p>
+      <a href="/contact-us"
+         class="relative z-10 inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-bold shadow-md hover:bg-blue-50 transition-colors">
+        Contact Our Sales Team
+      </a>
+    </div>
+
+  </div>
+</div>
